@@ -1,0 +1,25 @@
+.env
+node_modules/
+dist/
+
+# Local generated notes (do not track)
+brevto-website-todo.txt
+perplexity-result.txt
+chatgpt-result.txt
+
+# Vite build output
+dist_site/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Lockfiles and local env
+package-lock.json
+yarn.lock
+.env.local
+.env.*.local
+
+# Misc
+/.history/
