@@ -1,21 +1,65 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
-import Home from './pages/Home'
-import ProductsServices from './pages/ProductsServices'
-import Header from './components/Header'
-import Footer from './components/Footer'
+import React from "react";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 
-export default function App() {
+import Layout from "./components/layout/Layout";
+
+import Home from "./pages/Home";
+import About from "./pages/About";
+import ProductsServices from "./pages/ProductsServices";
+import Careers from "./pages/Careers";
+import Blogs from "./pages/Blogs";
+import Contact from "./pages/Contact";
+import Legal from "./pages/Legal";
+
+import "./styles/global.css";
+
+const App = () => {
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-100">
-      <Header />
-      <main className="p-6">
+    <BrowserRouter>
+
+      <Layout>
+
         <Routes>
+
           <Route path="/" element={<Home />} />
-          <Route path="/products" element={<ProductsServices/>} />
+
+          <Route path="/about" element={<About />} />
+
+          <Route
+            path="/products-services"
+            element={<ProductsServices />}
+          />
+
+          <Route
+            path="/careers"
+            element={<Careers />}
+          />
+
+          <Route
+            path="/blogs"
+            element={<Blogs />}
+          />
+
+          <Route
+            path="/contact"
+            element={<Contact />}
+          />
+
+          <Route
+            path="/legal"
+            element={<Legal />}
+          />
+
         </Routes>
-      </main>
-      <Footer />
-    </div>
-  )
-}
+
+      </Layout>
+
+    </BrowserRouter>
+  );
+};
+
+export default App;

@@ -1,0 +1,60 @@
+:root {
+
+  /* COLORS */
+
+  --bg-primary: #0B0F14;
+  --bg-secondary: #111827;
+  --bg-tertiary: #16202A;
+
+  --surface: rgba(255,255,255,0.03);
+  --surface-hover: rgba(255,255,255,0.05);
+
+  --primary: #38BDF8;
+  --secondary: #22D3EE;
+  --purple: #7C3AED;
+
+  --text-primary: #F8FAFC;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
+
+  --border: rgba(255,255,255,0.08);
+
+  /* GRADIENTS */
+
+  --primary-gradient:
+    linear-gradient(
+      135deg,
+      #38BDF8,
+      #22D3EE
+    );
+
+  --glass-gradient:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.05),
+      rgba(255,255,255,0.01)
+    );
+
+  /* SHADOWS */
+
+  --shadow-sm:
+    0 4px 10px rgba(0,0,0,0.20);
+
+  --shadow-md:
+    0 10px 30px rgba(0,0,0,0.30);
+
+  --shadow-lg:
+    0 25px 60px rgba(0,0,0,0.45);
+
+  /* BORDER RADIUS */
+
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+
+  /* TRANSITIONS */
+
+  --transition:
+    all 0.3s ease;
+
+}

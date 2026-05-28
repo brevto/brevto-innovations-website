@@ -1,0 +1,166 @@
+.hero-section {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+
+  background:
+    radial-gradient(circle at top left,
+      rgba(56,189,248,0.15),
+      transparent 30%),
+
+    radial-gradient(circle at bottom right,
+      rgba(124,58,237,0.15),
+      transparent 30%);
+}
+
+.hero-content {
+  max-width: 850px;
+
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  margin: 30px 0;
+}
+
+.hero-content p {
+  max-width: 700px;
+  margin-bottom: 40px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.hero-glow-1 {
+  width: 350px;
+  height: 350px;
+
+  background:
+    rgba(56,189,248,0.20);
+
+  top: 0;
+  left: 0;
+}
+
+.hero-glow-2 {
+  width: 450px;
+  height: 450px;
+
+  background:
+    rgba(124,58,237,0.15);
+
+  bottom: 0;
+  right: 0;
+}
+
+.service-number {
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 24px;
+
+  border-radius: 18px;
+
+  background: var(--primary-gradient);
+
+  color: black;
+
+  font-weight: 800;
+}
+
+.product-spotlight-card {
+  padding: 50px;
+}
+
+.product-content {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 50px;
+}
+
+.product-feature {
+  padding: 18px 20px;
+
+  margin-bottom: 18px;
+
+  border-radius: var(--radius-md);
+
+  background:
+    rgba(255,255,255,0.04);
+
+  border:
+    1px solid var(--border);
+}
+
+.careers-content {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 40px;
+}
+
+.final-cta-card {
+  text-align: center;
+
+  padding: 90px 50px;
+
+  border-radius: var(--radius-lg);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(56,189,248,0.10),
+      rgba(124,58,237,0.10)
+    );
+
+  border:
+    1px solid var(--border);
+}
+
+.final-cta-card p {
+  max-width: 700px;
+  margin: 25px auto 40px;
+}
+
+.blog-meta {
+  margin-top: 25px;
+
+  display: flex;
+  justify-content: space-between;
+
+  color: var(--text-muted);
+
+  font-size: 0.9rem;
+}
+
+@media(max-width: 992px) {
+
+  .product-content {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media(max-width: 768px) {
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .careers-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+}

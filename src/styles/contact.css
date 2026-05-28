@@ -1,0 +1,21 @@
+.contact-grid {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1.4fr;
+
+  gap: 40px;
+}
+
+.contact-form {
+  width: 100%;
+}
+
+@media(max-width: 992px) {
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
