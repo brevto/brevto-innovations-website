@@ -1,0 +1,37 @@
+.process-pipeline-section {
+  background: transparent;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 34px;
+}
+
+.process-step {
+  padding: 28px 22px;
+}
+
+.process-step-title {
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  margin-bottom: 10px;
+}
+
+.process-step-desc {
+  color: var(--text-secondary);
+}
+
+@media(max-width: 992px) {
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width: 768px) {
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

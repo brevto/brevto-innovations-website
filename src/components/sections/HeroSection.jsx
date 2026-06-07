@@ -6,13 +6,17 @@ import Button from "../ui/Button";
 import Badge from "../ui/Badge";
 import GradientText from "../ui/GradientText";
 import GlowOrb from "../ui/GlowOrb";
+import DotsBackground from "../ui/DotsBackground";
 
 const HeroSection = () => {
   return (
     <section className="hero-section">
 
+      <DotsBackground />
+
       <GlowOrb className="hero-glow-1" />
       <GlowOrb className="hero-glow-2" />
+
 
       <Container>
 

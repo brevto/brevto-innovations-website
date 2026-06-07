@@ -1,0 +1,49 @@
+/* =========================
+   CONNECTING DOTS BACKGROUND
+   Dark, subtle, no heavy gradients
+========================= */
+
+.dots-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+
+  /* must be visible (target ~20-30% overall) */
+  opacity: 0.28;
+
+
+  /* Ensure dots always sit behind hero content */
+  transform: translateZ(0);
+
+}
+
+
+/* Optional debug outline */
+.dots-bg.debug-outline {
+  outline: 2px solid rgba(255,0,0,0.12);
+}
+
+
+/* When the dots are placed inside the centered container, ensure
+   they are clipped/limited to the content width and sit behind content. */
+/* legacy modifier removed - hero-level .dots-bg covers the hero */
+
+.dots-bg canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+
+  /* ensure canvas is rendered as low-impact layer */
+  will-change: transform, opacity;
+}
+
+/* Ensure app content is above */
+.app-layout {
+  position: relative;
+  /* keep default stacking; child elements control z-index */
+}
+
