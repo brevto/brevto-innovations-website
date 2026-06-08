@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Container from "./Container";
+// import "../../index.css";just 
+import "../../styles/index.css";
+import "../../styles/header.css";
+
+
 
 const Header = () => {
 
@@ -21,9 +26,12 @@ const Header = () => {
 
         {/* LOGO */}
         <Link to="/" className="logo" onClick={closeMenu}>
-          <span>Brevto</span>
-          <p>Innovations Pvt Ltd</p>
+          <img className="logo-img" src="/assets/icons/company-logo.png" alt="Brevto" />
+          {/* <span>Brevto</span>
+          <p>Innovations Pvt Ltd</p> */}
         </Link>
+
+
 
         {/* NAVIGATION */}
         <nav className={`nav-menu ${menuOpen ? "active" : ""}`}>

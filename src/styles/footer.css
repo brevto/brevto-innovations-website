@@ -1,0 +1,214 @@
+/* =========================
+   FOOTER
+========================= */
+
+.main-footer {
+  background: var(--bg-primary);
+
+  border-top: 1px solid transparent;
+
+  position: relative;
+}
+
+.main-footer::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #22E7FF,
+    #1D7DFF,
+    transparent
+  );
+}
+
+/* =========================
+   BRAND
+========================= */
+
+.footer-brand h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+
+  background: var(--primary-gradient);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.footer-brand p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  max-width: 420px;
+}
+
+/* =========================
+   LINKS
+========================= */
+
+.footer-links h3 {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.footer-links a,
+.footer-links p {
+  display: block;
+
+  text-decoration: none;
+
+  color: var(--text-secondary);
+
+  margin-bottom: 14px;
+
+  transition: var(--transition);
+}
+
+.footer-links a:hover {
+  background: var(--primary-gradient);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  transform: translateX(4px);
+}
+
+/* =========================
+   SOCIAL ICONS
+========================= */
+
+.footer-socials {
+  display: flex;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.footer-socials a {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  border-radius: 14px;
+
+  font-size: 1.1rem;
+
+  /* color: #22E7FF; */
+
+  overflow: hidden;
+
+  transition: all 0.35s ease;
+}
+
+/* Gradient Border */
+
+.footer-socials a::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  padding: 1px;
+
+  border-radius: inherit;
+
+  background: none;
+  
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.footer-socials a::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    135deg,
+    #22E7FF,
+    #1D7DFF,
+    #003BFF
+  );
+
+  opacity: 0;
+
+  transition: 0.35s ease;
+}
+
+.footer-socials a svg {
+  position: relative;
+  z-index: 2;
+}
+
+.footer-socials a:hover::after {
+  opacity: 1;
+}
+
+.footer-socials a:hover {
+  color: white;
+
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 8px 25px rgba(34, 231, 255, 0.25),
+    0 0 30px rgba(29, 125, 255, 0.15);
+}
+
+/* =========================
+   FOOTER BOTTOM
+========================= */
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer-bottom p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+
+.footer-gradient-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+/* Icon */
+
+.gradient-icon {
+  fill: url(#brevtoGradient);
+
+  width: 22px;
+  height: 22px;
+
+  position: relative;
+  z-index: 2;
+
+  transition: all 0.35s ease;
+}
+
+.footer-socials a:hover .gradient-icon {
+  fill: #FFFFFF;
+}

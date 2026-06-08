@@ -22,9 +22,9 @@ const HeroSection = () => {
 
         <div className="hero-content">
 
-          <Badge>
+          {/* <Badge>
             Brevto Innovations Pvt Ltd
-          </Badge>
+          </Badge> */}
 
           <h1>
             Building Modern

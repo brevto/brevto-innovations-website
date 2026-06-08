@@ -4,10 +4,10 @@ import "../../styles/dots.css";
 // No external libraries required.
 
 const DotsBackground = ({
-  dotColor = "rgba(230,230,230,0.5)",
-  lineColor = "rgba(200,200,200,0.3)",
+  dotColor = "rgba(230,230,230,0.7)",
+  lineColor = "rgba(200,200,200,0.5)",
 
-  maxDistance = 150,
+  maxDistance = 170,
   density = 0.00035,
   className = "",
 }) => {

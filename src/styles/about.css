@@ -4,4 +4,6 @@
 
 .about-values .ui-card {
   height: 100%;
+  color: rgba(230,230,230,0.7);
 }
+

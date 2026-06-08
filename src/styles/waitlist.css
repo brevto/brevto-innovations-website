@@ -25,10 +25,11 @@
 }
 
 .waitlist-status.success {
-  border-color: rgba(56,189,248,0.45);
-  background: rgba(56,189,248,0.10);
-  color: var(--primary);
+  border-color: rgba(236,72,153,0.35);
+  background: rgba(236,72,153,0.10);
+  color: var(--text-primary);
 }
+
 
 .waitlist-status.error {
   border-color: rgba(255,44,193,0.35);

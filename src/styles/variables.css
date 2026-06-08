@@ -1,42 +1,63 @@
 :root {
 
-  /* COLORS */
+  /* BACKGROUNDS */
 
-  --bg-primary: #0B0F14;
-  --bg-secondary: #111827;
-  --bg-tertiary: #16202A;
+  --bg-primary: #030712;
+  --bg-secondary: #0B1220;
+  --bg-tertiary: #111827;
 
   --surface: rgba(255,255,255,0.03);
-  --surface-hover: rgba(255,255,255,0.05);
+  --surface-hover: rgba(255,255,255,0.06);
 
-  --primary: #38BDF8;
-  --secondary: #22D3EE;
+  /* BRAND COLORS */
+
+  --primary: #22E7FF;
+  --secondary: #1D7DFF;
+  --accent: #003BFF;
+
+  /* LOGO COLORS */
+
+  --primary-cyan: #22E7FF;
+  --primary-blue: #1D7DFF;
+  --primary-deep-blue: #003BFF;
+
+  /* OPTIONAL PRODUCT COLORS */
+
   --purple: #7C3AED;
+  --hot-pink: #EC4899;
 
-  /* Premium multi-stop primary gradient */
-  --primary-cyan: #22D3EE;
-  --primary-blue: #3B82F6;
-  --primary-purple: #7C3AED;
-  --primary-hot-pink: #EC4899;
-
+  /* TEXT */
 
   --text-primary: #F8FAFC;
   --text-secondary: #CBD5E1;
   --text-muted: #94A3B8;
 
-  --border: rgba(255,255,255,0.08);
+  /* BORDER */
 
-  /* GRADIENTS */
+  --border: rgba(34,231,255,0.12);
+
+  /* MAIN BRAND GRADIENT */
 
   --primary-gradient:
     linear-gradient(
       135deg,
-      #22D3EE,
+      #22E7FF 0%,
+      #1D7DFF 50%,
+      #003BFF 100%
+    );
+
+  /* PRODUCT GRADIENT */
+
+  --product-gradient:
+    linear-gradient(
+      135deg,
+      #22E7FF,
       #3B82F6,
       #7C3AED,
       #EC4899
     );
 
+  /* GLASS */
 
   --glass-gradient:
     linear-gradient(
@@ -56,7 +77,10 @@
   --shadow-lg:
     0 25px 60px rgba(0,0,0,0.45);
 
-  /* BORDER RADIUS */
+  --glow:
+    0 0 20px rgba(34,231,255,0.25);
+
+  /* RADIUS */
 
   --radius-sm: 12px;
   --radius-md: 18px;
@@ -64,7 +88,5 @@
 
   /* TRANSITIONS */
 
-  --transition:
-    all 0.3s ease;
-
+  --transition: all 0.3s ease;
 }
