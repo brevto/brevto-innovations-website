@@ -3,7 +3,7 @@ import React from "react";
 import Container from "../layout/Container";
 
 import Grid from "../ui/Grid";
-import StatCard from "../ui/StatCard";
+import Card from "../ui/Card";
 
 const StatsSection = () => {
   return (
@@ -13,25 +13,25 @@ const StatsSection = () => {
 
         <Grid columns={4}>
 
-          <StatCard
-            number="10+"
-            label="Projects"
-          />
+          <Card>
+            <h3>Projects Completed</h3>
+            <p>Building solutions across websites, applications, and digital products.</p>
+          </Card>
 
-          <StatCard
-            number="5+"
-            label="Products"
-          />
+          <Card>
+            <h3>Products & Initiatives</h3>
+            <p>Exploring and developing technology-driven ideas and platforms.</p>
+          </Card>
 
-          <StatCard
-            number="100%"
-            label="Modern Architecture"
-          />
+          <Card>
+            <h3>Modern Development Practices</h3>
+            <p>Focused on performance, maintainability, and scalable architecture.</p>
+          </Card>
 
-          <StatCard
-            number="24/7"
-            label="Innovation Mindset"
-          />
+          <Card>
+            <h3>Continuous Learning Culture</h3>
+            <p>Committed to improvement, experimentation, and innovation.</p>
+          </Card>
 
         </Grid>
 

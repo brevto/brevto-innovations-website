@@ -16,15 +16,15 @@ const CareersSection = () => {
           <div>
 
             <SectionHeading
-              tag="Careers & Internships"
-              title="Build Innovative Products With Us"
-              description="Join a growing technology company focused on premium digital experiences and startup innovation."
+              tag="CAREERS"
+              title="Build the Future With Us"
+              description="We're building an environment where learners, creators, developers, and innovators can contribute, grow, and create meaningful technology."
             />
 
           </div>
 
           <Button variant="primary">
-            Explore Opportunities
+            View Opportunities
           </Button>
 
         </div>

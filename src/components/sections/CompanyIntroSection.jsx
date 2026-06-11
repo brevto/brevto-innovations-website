@@ -1,62 +1,107 @@
-import React from "react";
-
+import React, { useEffect } from "react";
 import Container from "../layout/Container";
+import "../../styles/CompanyIntroSection.css";
 
-import Card from "../ui/Card";
-import Grid from "../ui/Grid";
-import SectionHeading from "../ui/SectionHeading";
+const features = [
+  {
+    icon: "📦",
+    title: "Product Development",
+    desc: "Building digital products with a focus on usability, scalability, and sustainable growth.",
+  },
+  {
+    icon: "🌐",
+    title: "Modern Web Experiences",
+    desc: "Creating websites and web applications that balance performance, branding, and user experience.",
+  },
+  {
+    icon: "🚀",
+    title: "Startup Enablement",
+    desc: "Helping startups establish a professional digital presence and launch with confidence.",
+  },
+  {
+    icon: "💡",
+    title: "Innovation-Led Execution",
+    desc: "Approaching every project with curiosity, adaptability, and a commitment to continuous improvement.",
+  },
+];
 
 const CompanyIntroSection = () => {
+
+  
+useEffect(() => {
+  document.documentElement.style.setProperty(
+    "--dot-fade-1",
+    `${(1.4 + Math.random() * 0.5).toFixed(2)}px`
+  );
+
+  document.documentElement.style.setProperty(
+    "--dot-fade-2",
+    `${(1.5 + Math.random() * 0.6).toFixed(2)}px`
+  );
+
+  document.documentElement.style.setProperty(
+    "--dot-fade-3",
+    `${(1.8 + Math.random() * 0.8).toFixed(2)}px`
+  );
+}, []);
+
   return (
     <section className="company-intro-section">
-
       <Container>
+        <div className="company-wrapper">
 
-        <SectionHeading
-          tag="Who We Are"
-          title="Technology-Led Innovation Company"
-          description="Building premium digital products and startup-focused technology experiences."
-        />
+          <div className="company-dot-pattern"></div>
 
-        <Grid columns={3}>
+          <div className="company-header">
 
-          <Card>
+            <span className="company-tag">
+              WHO WE ARE
+            </span>
 
-            <h3>Digital Products</h3>
+            <h2 className="company-title">
+              Technology Company.
+              <br />
+              Product Builders.
+              <br />
+              <span>Problem Solvers.</span>
+            </h2>
 
-            <p>
-              Modern scalable platforms built with
-              premium product thinking and architecture.
+            <p className="company-description">
+              Our work spans product development, web experiences,
+              digital platforms, and innovation-led solutions
+              designed for modern users and growing organizations.
             </p>
 
-          </Card>
+          </div>
 
-          <Card>
+          <div className="divider"></div>
 
-            <h3>Startup Websites</h3>
+          <div className="company-grid">
 
-            <p>
-              Brand-first website systems engineered
-              for launch-ready startups and businesses.
-            </p>
+            {features.map((item, index) => (
+              <div key={index} className="feature-card">
 
-          </Card>
+                <div className="feature-icon">
+                  {item.icon}
+                </div>
 
-          <Card>
+                <h3>{item.title}</h3>
 
-            <h3>Innovation Focus</h3>
+                <div className="card-line"></div>
 
-            <p>
-              Combining design, development,
-              scalability, and startup execution.
-            </p>
+                <p>{item.desc}</p>
 
-          </Card>
+                <button className="arrow-btn">
+                  →
+                </button>
 
-        </Grid>
+              </div>
+            ))}
 
+          </div>
+
+        </div>
       </Container>
-
     </section>
   );
 };

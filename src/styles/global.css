@@ -49,7 +49,7 @@ button {
 
 section {
   position: relative;
-  padding: 120px 0;
+  padding: 60px 0;
 }
 
 
@@ -130,21 +130,22 @@ section {
 
 .ui-btn.primary {
   background: var(--primary-gradient);
-  color: black;
+  color: var(--text-primary);
+  font-weight: 800;
 }
 
 .ui-btn.secondary {
   background:
-    rgba(255,255,255,0.04);
+    rgba(32, 32, 32, 0.2);
 
   border:
-    1px solid var(--border);
+    1px solid var(--border-secondary);
 
   color: white;
 }
 
 .ui-btn.md {
-  padding: 15px 26px;
+  padding: 14px 24px;
 }
 
 .ui-btn.lg {
@@ -165,7 +166,7 @@ section {
 
   border-radius: var(--radius-lg);
 
-  padding: 35px;
+  padding: 50px;
 
   transition: var(--transition);
 
@@ -173,7 +174,7 @@ section {
 }
 
 .hover-card:hover {
-  transform: translateY(-8px);
+  /* transform: translateY(-8px); */
 
   border-color:
     rgba(56,189,248,0.25);
@@ -264,7 +265,7 @@ section {
 /* GRADIENT TEXT */
 
 .gradient-text {
-  background: var(--primary-gradient);
+  background: var(--secondary-gradient);
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

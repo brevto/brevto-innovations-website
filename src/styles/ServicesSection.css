@@ -1,0 +1,422 @@
+.services-section {
+  padding: 60;
+  background: var(--bg-primary);
+}
+
+.services-wrapper {
+  position: relative;
+  overflow: hidden;
+
+  padding: 40px 55px 55px 55px;
+
+  border-radius: var(--radius-lg);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(11,18,32,0.98),
+      rgba(3,7,18,0.98)
+    );
+
+  border: 1px solid var(--border);
+
+  box-shadow:
+    var(--shadow-lg),
+    0 0 60px rgba(34,231,255,0.08);
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.services-hero {
+  display: grid;
+  grid-template-columns: 1.5fr 0.5fr;
+  /* gap: 60px; */
+  align-items: center;
+}
+
+.services-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.services-tag {
+  display: inline-block;
+  /* top: 10px; */
+  margin-bottom: 20px;
+
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+
+  background: var(--primary-gradient);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.services-title {
+  color: var(--text-primary);
+
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+
+  line-height: 1.1;
+
+  margin-bottom: 25px;
+}
+
+.services-title span {
+  background: var(--primary-gradient);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.services-description {
+  color: var(--text-secondary);
+
+  font-size: 1.15rem;
+  line-height: 1.8;
+
+  max-width: 650px;
+}
+
+/* ==========================================
+   VISUAL
+========================================== */
+
+.services-visual {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  max-height: 300px;
+  left: 10%;
+}
+
+/* GRID FLOOR */
+
+.services-visual::before {
+  content: "";
+
+  position: absolute;
+
+  bottom: -20%;
+  left: 51%;
+
+  width: 300px;
+  height: 290px;
+
+  transform:
+    translateX(-50%)
+    perspective(700px)
+    rotateX(75deg);
+/* 
+  background-image:
+    linear-gradient(
+      rgba(43, 135, 255, 0.815) 1px,
+      transparent 3px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(34, 137, 255, 0.911) 1px,
+      transparent 3px
+    ); */
+
+  background-size: 25px 25px;
+
+  opacity: .35;
+
+  mask-image:
+    radial-gradient(
+      ellipse at center,
+      rgb(1, 2, 10) 25%,
+      transparent 90%
+    );
+
+  -webkit-mask-image:
+    radial-gradient(
+      ellipse at center,
+      rgb(2, 3, 17) 25%,
+      transparent 90%
+    );
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+/* IMAGE CONTAINER */
+
+.services-blob {
+  position: relative;
+
+  width: 340px;
+  /* height: 30px; */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: blobFloat 7s ease-in-out infinite;
+
+  z-index: 2;
+}
+
+
+/* IMAGE */
+
+.services-visual-image {
+  position: relative;
+  right: -5%;
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  z-index: 2;
+
+  filter:
+    drop-shadow(0 0 10px rgba(0, 3, 8, 0.8))
+    drop-shadow(0 0 25px rgba(0, 3, 8, 0.8))
+    drop-shadow(0 0 50px rgba(0, 3, 8, 0.8));
+}
+
+/* FLOAT ANIMATION */
+
+@keyframes blobFloat {
+
+  0% {
+    transform: translateY(0px);
+  }
+
+  25% {
+    transform: translateY(-8px);
+  }
+
+  50% {
+    transform: translateY(-16px);
+  }
+
+  75% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* ==========================================
+   DIVIDER
+========================================== */
+
+.services-divider {
+  height: 1px;
+
+  margin: 25px 0 50px 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(34,231,255,0.35),
+      transparent
+    );
+}
+
+/* ==========================================
+   GRID
+========================================== */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 24px;
+}
+
+/* ==========================================
+   CARD
+========================================== */
+.service-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 250px;
+
+  padding: 20px 20px 5px 20px;
+
+  border-radius: 24px;
+
+  background: var(--glass-gradient);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 1px solid var(--border);
+
+  transition: var(--transition);
+
+  overflow: hidden;
+
+  box-shadow:
+    var(--shadow-md),
+    var(--secondary-glow);
+}
+
+.service-card::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(34, 231, 255, 0.12),
+      transparent 55%
+    );
+
+  opacity: 0;
+
+  transition: var(--transition);
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+
+  border-color: rgba(34, 185, 255, 0.25);
+
+  box-shadow:
+    var(--shadow-md),
+    var(--glow);
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.service-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  margin-bottom: 20px;
+}
+
+.service-header h3 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  line-height: 1.3;
+}
+
+.service-number {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 20px;
+
+  background: var(--primary-gradient);
+
+  color: #fff;
+
+  font-size: 0.9rem;
+  font-weight: 800;
+
+  box-shadow: var(--glow);
+}
+
+.service-line {
+  width: 100%;
+  height: 2.5px;
+
+  border-radius: 999px;
+
+  margin-bottom: 20px;
+
+  background: var(--primary-gradient);
+}
+
+.service-card p {
+  color: var(--text-secondary);
+
+  line-height: 1.7;
+
+  font-size: 0.85rem;
+
+  flex: 1;
+}
+
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 1200px) {
+
+  .services-hero {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .services-visual {
+    min-height: 380px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .services-wrapper {
+    padding: 35px 25px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-title {
+    font-size: 2.5rem;
+  }
+
+  .services-description {
+    font-size: 1rem;
+  }
+
+  .services-blob {
+    width: 280px;
+    height: 280px;
+  }
+
+  .services-visual {
+    min-height: 320px;
+  }
+
+  .services-visual::before {
+    width: 260px;
+    height: 160px;
+  }
+}

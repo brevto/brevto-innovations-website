@@ -12,8 +12,8 @@
   z-index: 0;
   pointer-events: none;
 
-  /* must be visible (target ~20-30% overall) */
-  opacity: 0.5;
+  /* must be visible (target ~35-45% overall) */
+  opacity: 0.4;
 
 
   /* Ensure dots always sit behind hero content */

@@ -11,7 +11,7 @@
   background: transparent;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(94, 145, 255, 0.212);
+  border: 1px solid rgba(111, 132, 175, 0.39);
   box-shadow:
     0 8px 32px rgba(0, 0, 0, 0.35),
     0 0 20px rgba(34, 231, 255, 0.05);
@@ -157,12 +157,12 @@ header{
 
   background: linear-gradient(
   135deg,
-  #22E7FF 0%,
+  #14dcf7 0%,
   #1D7DFF 50%,
   #003BFF 100%
 );
 
-  color: black;
+  color: rgba(255, 255, 255, 0.973);
   font-weight: 700;
 
   cursor: pointer;

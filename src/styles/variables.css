@@ -28,22 +28,32 @@
 
   /* TEXT */
 
-  --text-primary: #F8FAFC;
+  --text-primary: #f4f6f8;
+  /* --text-primary: white; */
   --text-secondary: #CBD5E1;
   --text-muted: #94A3B8;
 
   /* BORDER */
 
   --border: rgba(34,231,255,0.12);
+  --border-secondary: rgba(88, 89, 90, 0.712);
 
   /* MAIN BRAND GRADIENT */
 
   --primary-gradient:
     linear-gradient(
-      135deg,
+      135deg, 
       #22E7FF 0%,
       #1D7DFF 50%,
       #003BFF 100%
+    );
+
+  --secondary-gradient:
+    linear-gradient(
+      180deg,
+      #1776fa 0%,
+      #33beff 50%,
+      #0039f3 100%
     );
 
   /* PRODUCT GRADIENT */
@@ -80,6 +90,8 @@
   --glow:
     0 0 20px rgba(34,231,255,0.25);
 
+  --secondary-glow:
+    4px 4px 1px rgba(16, 128, 202, 0.15);
   /* RADIUS */
 
   --radius-sm: 12px;

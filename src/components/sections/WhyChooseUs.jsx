@@ -13,52 +13,48 @@ const WhyChooseUs = () => {
       <Container>
 
         <SectionHeading
-          tag="Why Choose Us"
-          title="Execution Built Around Innovation"
+          tag="WHY CHOOSE US"
+          title="Why Organizations Work With Brevto"
         />
 
         <Grid columns={4}>
 
           <Card>
 
-            <h3>Premium UI/UX</h3>
+            <h3>Product-First Thinking</h3>
 
             <p>
-              Polished design systems with
-              immersive interaction experiences.
+              Every solution begins with understanding the problem before writing the first line of code.
             </p>
 
           </Card>
 
           <Card>
 
-            <h3>Scalable Systems</h3>
+            <h3>Modern Technology Stack</h3>
 
             <p>
-              Modern frontend architecture
-              built for long-term scalability.
+              Built using contemporary technologies, scalable architectures, and industry-standard development practices.
             </p>
 
           </Card>
 
           <Card>
 
-            <h3>Startup Focus</h3>
+            <h3>Design With Purpose</h3>
 
             <p>
-              Technology execution tailored
-              for startups and emerging brands.
+              User experiences are crafted to be intuitive, accessible, and aligned with business goals.
             </p>
 
           </Card>
 
           <Card>
 
-            <h3>Product Thinking</h3>
+            <h3>Long-Term Perspective</h3>
 
             <p>
-              Strategy-driven development
-              balancing technology and branding.
+              We focus on creating systems that can evolve as products, businesses, and audiences grow.
             </p>
 
           </Card>

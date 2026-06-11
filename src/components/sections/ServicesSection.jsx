@@ -1,75 +1,132 @@
 import React from "react";
-
 import Container from "../layout/Container";
+import "../../styles/ServicesSection.css";
 
-import Card from "../ui/Card";
-import Grid from "../ui/Grid";
-import SectionHeading from "../ui/SectionHeading";
+const services = [
+  {
+    number: "01",
+    title: "Website Design & Development",
+    desc: "Professional websites built for startups, businesses, and emerging brands with modern design systems and responsive experiences.",
+  },
+  {
+    number: "02",
+    title: "Frontend Engineering",
+    desc: "Fast, scalable, and maintainable interfaces engineered using modern development practices and performance-focused architecture.",
+  },
+  {
+    number: "03",
+    title: "Product Development",
+    desc: "From concept validation to functional digital products, we help transform ideas into usable technology solutions.",
+  },
+  {
+    number: "04",
+    title: "Landing Pages & Launch Experiences",
+    desc: "Purpose-built pages and digital experiences designed to support product launches, campaigns, and business growth.",
+  },
+];
 
 const ServicesSection = () => {
   return (
     <section className="services-section">
-
       <Container>
+        <div className="services-wrapper">
 
-        <SectionHeading
-          center={true}
-          tag="Services"
-          title="Designed for Modern Startups"
-          description="Technology and design services built for ambitious startups and digital brands."
-        />
+          {/* HERO SECTION */}
 
-        <Grid columns={3}>
+          <div className="services-hero">
 
-          <Card>
+            {/* LEFT CONTENT */}
 
-            <div className="service-number">
-              01
+            <div className="services-content">
+
+              <span className="services-tag">
+                SERVICES
+              </span>
+
+              <h2 className="services-title">
+                Solutions Designed for Modern
+                <br />
+                <span>Businesses & Startups</span>
+              </h2>
+
+              <p className="services-description">
+                Technology experiences that help businesses
+                communicate, grow and deliver value.
+              </p>
+
             </div>
 
-            <h3>Website Design</h3>
+            {/* RIGHT VISUAL */}
 
-            <p>
-              Premium startup and business websites
-              with immersive UI systems.
-            </p>
+            <div className="services-visual">
 
-          </Card>
+              {/* HOLOGRAPHIC FLOOR */}
 
-          <Card>
+              <div className="services-floor"></div>
 
-            <div className="service-number">
-              02
+              {/* FLOOR GLOW */}
+
+              <div className="services-floor-glow"></div>
+
+              {/* IMAGE HOLDER */}
+
+              <div className="services-blob">
+
+                <div className="services-image-wrapper">
+
+                  <img
+                    src="/images/services-visual.png"
+                    alt="Services Visual"
+                    className="services-visual-image"
+                  />
+
+                </div>
+
+              </div>
+
             </div>
 
-            <h3>Frontend Development</h3>
+          </div>
 
-            <p>
-              Responsive scalable frontend architecture
-              optimized for performance.
-            </p>
+          {/* DIVIDER */}
 
-          </Card>
+          <div className="services-divider"></div>
 
-          <Card>
+          {/* SERVICES GRID */}
 
-            <div className="service-number">
-              03
-            </div>
+          <div className="services-grid">
 
-            <h3>Launch Experiences</h3>
+            {services.map((service) => (
+              <div
+                key={service.number}
+                className="service-card"
+              >
 
-            <p>
-              High-conversion landing experiences
-              built for product visibility and growth.
-            </p>
+                <div className="service-header">
 
-          </Card>
+                  <div className="service-number">
+                    {service.number}
+                  </div>
 
-        </Grid>
+                  <h3>
+                    {service.title}
+                  </h3>
 
+                </div>
+
+                <div className="service-line"></div>
+
+                <p>
+                  {service.desc}
+                </p>
+
+              </div>
+            ))}
+
+          </div>
+
+        </div>
       </Container>
-
     </section>
   );
 };

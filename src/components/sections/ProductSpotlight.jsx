@@ -1,72 +1,55 @@
+// ProductSpotlight.jsx (updated)
 import React from "react";
-
 import Container from "../layout/Container";
-
+import "../../styles/ProductSpotlight.css";
 import Card from "../ui/Card";
 import Button from "../ui/Button";
-import SectionHeading from "../ui/SectionHeading";
 
 const ProductSpotlight = () => {
   return (
     <section className="product-spotlight-section">
-
       <Container>
-
-        <SectionHeading
-          tag="Flagship Product"
-          title="Brevto"
-          description="A modern social media platform built with mobile-first architecture and trust-focused infrastructure."
-        />
-
         <Card className="product-spotlight-card">
-
           <div className="product-content">
 
-            <div className="product-left">
-
-              <h3>
-                Modern Social Media Platform
-              </h3>
-
+            {/* LEFT SIDE (Glass Panel) */}
+            <div className="product-left glass-panel">
+              <span className="product-tag">FEATURED PRODUCT</span>
+              <h2>Brevto</h2>
+              <h3>A Modern Social Platform Built For Meaningful Connections</h3>
               <p>
-                Built with analytics systems,
-                monetization capabilities,
-                scalable infrastructure,
-                and premium user experience architecture.
+                Brevto is a modern social platform focused on creating engaging, intuitive, 
+                and community-driven digital experiences. Built with a mobile-first mindset 
+                and modern technology infrastructure, it is designed to help people connect, 
+                share, and grow through seamless social interactions.
               </p>
-
-              <Button variant="primary">
-                Explore Product
-              </Button>
-
+              <Button variant="primary"> Explore Brevto </Button>
             </div>
 
-            <div className="product-right">
+            {/* RIGHT SIDE (Glass Preview) */}
+            <div className="product-right glass-preview">
+              {/* Floating Particles */}
+              <span className="particle particle-1"></span>
+              <span className="particle particle-2"></span>
+              <span className="particle particle-3"></span>
+              <span className="particle particle-4"></span>
 
-              <div className="product-feature">
-                Mobile-First Architecture
-              </div>
+              {/* Glass Reflection */}
+              <div className="phone-reflection"></div>
 
-              <div className="product-feature">
-                Blockchain-Backed Trust
-              </div>
+               <div class="phone-back-glow"></div>
 
-              <div className="product-feature">
-                Analytics & Monetization
-              </div>
-
-              <div className="product-feature">
-                Premium UX Systems
-              </div>
-
+              {/* Product Image */}
+              <img
+                src="/images/brevto-preview.png"
+                alt="Brevto Platform"
+                className="product-image"
+              />
             </div>
 
           </div>
-
         </Card>
-
       </Container>
-
     </section>
   );
 };

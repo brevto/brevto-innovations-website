@@ -13,19 +13,15 @@ const FinalCTASection = () => {
         <div className="final-cta-card">
 
           <h2>
-            Let’s Build Something Exceptional
+            Let's Build What's Next
           </h2>
 
           <p>
-            Whether you're launching a startup,
-            building a product,
-            or scaling your digital presence —
-            Brevto Innovations Pvt Ltd helps transform
-            ideas into premium experiences.
+            Whether you're launching a startup, developing a new product, or strengthening your digital presence, Brevto Innovations Pvt Ltd is ready to help transform ideas into practical, modern technology solutions.
           </p>
 
           <Button variant="primary">
-            Contact Us
+            Start a Conversation
           </Button>
 
         </div>
