@@ -1,9 +1,9 @@
 import React from "react";
 
 import Container from "../layout/Container";
-
 import Button from "../ui/Button";
-import SectionHeading from "../ui/SectionHeading";
+
+import "../../styles/CareersSection.css";
 
 const CareersSection = () => {
   return (
@@ -11,21 +11,52 @@ const CareersSection = () => {
 
       <Container>
 
-        <div className="careers-content">
+        <div className="careers-wrapper">
 
-          <div>
+          <div className="careers-content">
 
-            <SectionHeading
-              tag="CAREERS"
-              title="Build the Future With Us"
-              description="We're building an environment where learners, creators, developers, and innovators can contribute, grow, and create meaningful technology."
-            />
+            {/* LEFT SIDE */}
+
+            <div className="careers-left">
+
+              <span className="careers-tag">
+                CAREERS
+              </span>
+
+              <h2 className="careers-title">
+                Build the Future{" "}
+                <span>
+                  With Us
+                </span>
+              </h2>
+
+              <p className="careers-description">
+                We're building an environment where learners,
+                creators, developers, and innovators can contribute,
+                grow, and create meaningful technology.
+              </p>
+
+              <div className="careers-button">
+                <Button variant="primary">
+                  View Opportunities
+                </Button>
+              </div>
+
+            </div>
+
+            {/* RIGHT SIDE */}
+
+            <div className="careers-right">
+
+              <img
+                src="/images/careers-image.png"
+                alt="Careers"
+                className="careers-image"
+              />
+
+            </div>
 
           </div>
-
-          <Button variant="primary">
-            View Opportunities
-          </Button>
 
         </div>
 

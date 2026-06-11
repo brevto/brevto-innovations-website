@@ -18,10 +18,7 @@ const ProductSpotlight = () => {
               <h2>Brevto</h2>
               <h3>A Modern Social Platform Built For Meaningful Connections</h3>
               <p>
-                Brevto is a modern social platform focused on creating engaging, intuitive, 
-                and community-driven digital experiences. Built with a mobile-first mindset 
-                and modern technology infrastructure, it is designed to help people connect, 
-                share, and grow through seamless social interactions.
+                Brevto is a modern social platform built to help people connect, share, and engage through intuitive, community-driven experiences. Designed with a mobile-first approach and modern technology, it delivers seamless and meaningful social interactions.
               </p>
               <Button variant="primary"> Explore Brevto </Button>
             </div>

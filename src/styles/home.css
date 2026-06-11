@@ -74,33 +74,6 @@
 }
 
 
-.careers-content {
-  display: flex;
-
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 40px;
-}
-
-.final-cta-card {
-  text-align: center;
-
-  padding: 90px 50px;
-
-  border-radius: var(--radius-lg);
-
-  background: var(--accent-gradient);
-
-  border:
-    1px solid var(--border);
-}
-
-.final-cta-card p {
-  max-width: 700px;
-  margin: 25px auto 40px;
-}
-
 .blog-meta {
   margin-top: 25px;
 
@@ -119,11 +92,6 @@
     flex-direction: column;
   }
 
-  .careers-content {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
 }
 
 /* =====================================================
@@ -135,7 +103,6 @@
 .services-section,
 .product-spotlight-section,
 .why-section,
-.stats-section,
 .careers-section,
 .blog-preview-section,
 .final-cta-section {
@@ -147,7 +114,6 @@
 .company-intro-section .ui-card,
 .product-spotlight-section .ui-card,
 .why-section .ui-card,
-.stats-section .ui-card,
 .blog-preview-section .ui-card,
 .final-cta-card {
   transition: transform 0.35s ease, border-color 0.35s ease, background 0.35s ease;
@@ -221,9 +187,6 @@
 }
 
 /* CAREERS: keep existing layout but brand the card feel */
-.careers-section .careers-content {
-  padding: 18px;
-}
 
 /* BLOGS/INSIGHTS */
 .blog-preview-section .section-heading {
@@ -236,39 +199,4 @@
 
 .blog-preview-section .ui-tag {
   margin-bottom: 14px;
-}
-
-/* FINAL CTA: animate CTA card glow */
-.final-cta-card {
-  position: relative;
-  overflow: hidden;
-}
-
-.final-cta-card::before {
-  content: "";
-  position: absolute;
-  inset: -40px;
-  background:
-    radial-gradient(
-      700px circle at 20% 0%,
-      rgba(34,231,255,0.35),
-      transparent 55%
-    ),
-    radial-gradient(
-      520px circle at 90% 40%,
-      rgba(124,58,237,0.30),
-      transparent 60%
-    );
-  opacity: 0.75;
-  transition: opacity 0.35s ease;
-  z-index: 0;
-}
-
-.final-cta-card > * {
-  position: relative;
-  z-index: 1;
-}
-
-.final-cta-card:hover::before {
-  opacity: 1;
 }

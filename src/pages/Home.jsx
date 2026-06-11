@@ -5,7 +5,6 @@ import CompanyIntroSection from "../components/sections/CompanyIntroSection";
 import ServicesSection from "../components/sections/ServicesSection";
 import ProductSpotlight from "../components/sections/ProductSpotlight";
 import WhyChooseUs from "../components/sections/WhyChooseUs";
-import StatsSection from "../components/sections/StatsSection";
 import CareersSection from "../components/sections/CareersSection";
 import FinalCTASection from "../components/sections/FinalCTASection";
 
@@ -25,10 +24,7 @@ const Home = () => {
 
       <WhyChooseUs />
 
-      <StatsSection />
-
       <CareersSection />
-
 
       <FinalCTASection />
 

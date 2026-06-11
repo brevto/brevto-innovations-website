@@ -1,0 +1,119 @@
+
+.final-cta-card {
+  text-align: center;
+
+  padding: 90px 50px;
+
+  border-radius: var(--radius-lg);
+
+  background: var(--accent-gradient);
+
+  border:
+    1px solid var(--border);
+}
+
+.final-cta-card p {
+  max-width: 700px;
+  margin: 25px auto 40px;
+}
+
+
+/* FINAL CTA: animate CTA card glow */
+.final-cta-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.final-cta-card::before {
+  content: "";
+  position: absolute;
+  inset: -40px;
+
+  background:
+    radial-gradient(
+      700px circle at 20% 0%,
+      rgba(34,231,255,0.35),
+      transparent 55%
+    ),
+    radial-gradient(
+      520px circle at 90% 40%,
+      rgba(124,58,237,0.30),
+      transparent 60%
+    );
+
+  opacity: 0.75;
+
+  z-index: 0;
+}
+
+.final-cta-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+.final-cta-card:hover::before {
+  opacity: 1;
+}
+
+/* ==========================================
+   DOT PATTERNS
+========================================== */
+.cta-dots {
+  position: absolute;
+  width: 340px;
+  height: 450px;
+  pointer-events: none;
+  z-index: 1;
+
+  background-image:
+    radial-gradient(circle, currentColor 1.2px, transparent 1.2px);
+
+  background-size: 18px 18px;
+  background-repeat: repeat;
+}
+
+/* LEFT CYAN */
+.cta-dots-left {
+  top: -180px;
+  left: -20px;
+  color: #22e7ff;
+  opacity: 0.9;
+
+  border-radius: 25%;
+
+  -webkit-mask-image: linear-gradient(
+    to right,
+    rgba(0,0,0,1) 0%,
+    rgba(0,0,0,0.85) 40%,
+    rgba(0,0,0,0) 100%
+  );
+
+  mask-image: linear-gradient(
+    to right,
+    rgba(0,0,0,1) 0%,
+    rgba(0,0,0,0.85) 40%,
+    rgba(0,0,0,0) 100%
+  );
+}
+
+/* RIGHT PURPLE */
+.cta-dots-right {
+  top: 3px;
+  right: -20px;
+  color: #ff2bd6;
+  opacity: 0.9;
+
+  -webkit-mask-image: linear-gradient(
+    to left,
+    rgba(0,0,0,1) 0%,
+    rgba(0,0,0,0.85) 40%,
+    rgba(0,0,0,0) 100%
+  );
+
+  mask-image: linear-gradient(
+    to left,
+    rgba(0,0,0,1) 0%,
+    rgba(0,0,0,0.85) 40%,
+    rgba(0,0,0,0) 100%
+  );
+}
