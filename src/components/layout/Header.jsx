@@ -26,7 +26,7 @@ const Header = () => {
 
         {/* LOGO */}
         <Link to="/" className="logo" onClick={closeMenu}>
-          <img className="logo-img" src="/assets/icons/company-logo.png" alt="Brevto" />
+          <img className="logo-img" src="/icons/company-logo.png" alt="Brevto" />
           {/* <span>Brevto</span>
           <p>Innovations Pvt Ltd</p> */}
         </Link>

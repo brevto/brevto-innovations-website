@@ -14,7 +14,6 @@ import Careers from "./pages/Careers";
 import Blogs from "./pages/Blogs";
 import Contact from "./pages/Contact";
 import Legal from "./pages/Legal";
-
 import "./styles/global.css";
 
 const App = () => {
