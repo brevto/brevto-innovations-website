@@ -20,7 +20,7 @@ const Home = () => {
 
       <ServicesSection />
 
-      <ProductSpotlight />
+      {/* <ProductSpotlight /> */}
 
       <WhyChooseUs />
 
