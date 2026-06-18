@@ -49,7 +49,7 @@ const CareersSection = () => {
             <div className="careers-right">
 
               <img
-                src="/images/careers-image.png"
+                src="/images/home/careers-image.png"
                 alt="Careers"
                 className="careers-image"
               />

@@ -1,6 +1,6 @@
 import React from "react";
-import Container from "../layout/Container";
-import "../../styles/ServicesSection.css";
+import Container from "../../layout/Container";
+import "../../../styles/ServicesSection.css";
 
 const services = [
   {
@@ -75,7 +75,7 @@ const ServicesSection = () => {
                 <div className="services-image-wrapper">
 
                   <img
-                    src="/images/services-visual.png"
+                    src="/images/home/services-visual.png"
                     alt="Services Visual"
                     className="services-visual-image"
                   />

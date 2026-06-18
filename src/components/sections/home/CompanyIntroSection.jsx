@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import Container from "../layout/Container";
-import "../../styles/CompanyIntroSection.css";
+import Container from "../../layout/Container";
+import "../../../styles/CompanyIntroSection.css";
 
 const features = [
   {

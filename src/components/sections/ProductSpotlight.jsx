@@ -38,7 +38,7 @@ const ProductSpotlight = () => {
 
               {/* Product Image */}
               <img
-                src="/images/brevto-preview.png"
+                src="/images/home/brevto-preview.png"
                 alt="Brevto Platform"
                 className="product-image"
               />

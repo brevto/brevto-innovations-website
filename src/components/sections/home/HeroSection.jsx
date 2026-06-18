@@ -1,12 +1,12 @@
 import React from "react";
 
-import Container from "../layout/Container";
+import Container from "../../layout/Container";
 
-import Button from "../ui/Button";
-import Badge from "../ui/Badge";
-import GradientText from "../ui/GradientText";
-import GlowOrb from "../ui/GlowOrb";
-import DotsBackground from "../ui/DotsBackground";
+import Button from "../../ui/Button";
+import Badge from "../../ui/Badge";
+import GradientText from "../../ui/GradientText";
+import GlowOrb from "../../ui/GlowOrb";
+import DotsBackground from "../../ui/DotsBackground";
 
 const HeroSection = () => {
   return (

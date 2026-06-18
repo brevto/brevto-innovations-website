@@ -1,9 +1,9 @@
 import React from "react";
 
-import Container from "../layout/Container";
-import Card from "../ui/Card";
-import Grid from "../ui/Grid";
-import "../../styles/WhyChooseUs.css";
+import Container from "../../layout/Container";
+import Card from "../../ui/Card";
+import Grid from "../../ui/Grid";
+import "../../../styles/WhyChooseUs.css";
 
 import {
   FiTarget,

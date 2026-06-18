@@ -64,7 +64,7 @@ const ProductsServices = () => {
 
       </section>
 
-      <ProductSpotlight />
+      {/* <ProductSpotlight /> */}
 
       <FinalCTASection />
 
