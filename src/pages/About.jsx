@@ -21,8 +21,8 @@ const About = () => {
 
       <FoundersSection />
 
-      <FinalCTASection />
-
+      <FinalCTASection className="bw-cta" />
+      
     </div>
   );
 };

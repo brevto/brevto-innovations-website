@@ -27,7 +27,12 @@ const CompanyPrinciplesSection = () => {
         <div className="principles-header">
           <span className="principles-tag">Principles</span>
           <h2>
-            What Drives Our <span className="text-outlined">Company</span>
+            <span className="principles-main-text">
+              What Drives Our
+            </span>{" "}
+            <span className="text-outlined">
+              Company
+            </span>
           </h2>
         </div>
 
@@ -35,11 +40,30 @@ const CompanyPrinciplesSection = () => {
           {principles.map((item, index) => (
             <div className="principle-card" key={index}>
               <div className="principle-card-inner">
-                <span className="principle-number text-outlined">
-                  0{index + 1}
-                </span>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
+                <span className="principle-number">0{index + 1}</span>
+
+                <h3 className="principle-card-heading">
+                  {["Innovation", "Premium Design", "Startup Execution"].includes(
+                    item.title
+                  ) ? (
+                    <>
+                      <span className="principle-heading-first-letter">
+                        {item.title.slice(0, 1)}
+                      </span>
+                      {item.title.slice(1)}
+                    </>
+                  ) : (
+                    item.title
+                  )}
+                </h3>
+
+                <div className="principle-divider"></div>
+
+                <p className="principle-description">
+                  {item.description}
+                </p>
+
+                <div className="card-corner-rings"></div>
               </div>
             </div>
           ))}

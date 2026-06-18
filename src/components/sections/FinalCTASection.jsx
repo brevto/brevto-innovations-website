@@ -5,13 +5,13 @@ import "../../styles/FinalCTASection.css";
 
 import Button from "../ui/Button";
 
-const FinalCTASection = () => {
+const FinalCTASection = ({ className = "" }) => {
   return (
     <section className="final-cta-section">
 
       <Container>
 
-        <div className="final-cta-card">
+        <div className={`final-cta-card ${className}`}>
 
           {/* LEFT DOTS */}
           <div className="cta-dots cta-dots-left"></div>
@@ -21,7 +21,7 @@ const FinalCTASection = () => {
 
 
           <h2>
-            Let's Build What's Next
+            Let's <span className="cta-outlined">Build</span> What's Next
           </h2>
 
           <p>

@@ -1,23 +1,31 @@
 .founders-section {
-  padding: 120px 0;
+  position: relative;
+
+  padding: 130px 0;
+
+  overflow: hidden;
 }
+
+/* ==========================
+   HEADER
+========================== */
 
 .founders-header {
   text-align: center;
 
-  margin-bottom: 70px;
+  margin-bottom: 90px;
 }
-
+/* 
 .founders-tag {
   display: inline-block;
 
-  margin-bottom: 18px;
+  margin-bottom: 22px;
 
   font-size: .9rem;
   font-weight: 700;
 
   text-transform: uppercase;
-  letter-spacing: .12em;
+  letter-spacing: .18em;
 
   background:
     linear-gradient(
@@ -29,94 +37,374 @@
   -webkit-background-clip: text;
 
   color: transparent;
+} */
+
+
+.founders-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+
+  font-size: .9rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 50px;
+}
+
+.founders-tag::before,
+.founders-tag::after {
+  content: "";
+  width: 50px; /* adjust length */
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    rgba(49, 49, 49, 0.95),
+    rgba(214, 214, 214, 0.95)
+  );
+}
+
+.founders-tag::after {
+  background: linear-gradient(
+    90deg,
+    rgba(214, 214, 214, 0.95),
+    rgba(49, 49, 49, 0.95)
+  );
 }
 
 .founders-header h2 {
-  font-size: clamp(2.5rem,5vw,4rem);
+  margin: 0;
+
+  font-size: clamp(3rem, 7vw, 6.5rem);
+
+  line-height: .95;
+
+  font-weight: 800;
+
+  letter-spacing: -.05em;
 }
+
+.founders-main-text {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(252,252,252,.98),
+      rgba(220,220,220,.85)
+    );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.founders-outlined {
+  color: transparent;
+
+  -webkit-text-stroke: 1.5px rgba(255,255,255,.9);
+
+  text-transform: uppercase;
+
+  letter-spacing: .04em;
+}
+
+.founders-subtitle {
+  max-width: 760px;
+
+  margin: 30px auto 0;
+
+  font-size: 1.2rem;
+
+  line-height: 1.8;
+
+  color: rgba(255,255,255,.55);
+}
+
+/* ==========================
+   GRID
+========================== */
 
 .founders-grid {
   display: grid;
 
   grid-template-columns: repeat(3, 1fr);
 
-  gap: 30px;
+  gap: 28px;
 }
 
+/* ==========================
+   CARD
+========================== */
+
 .founder-card {
-  padding: 30px;
+  position: relative;
 
-  border-radius: 24px;
+  overflow: hidden;
 
-  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 28px;
+
+  border: 1px solid rgba(255,255,255,.15);
 
   background:
     linear-gradient(
       180deg,
-      rgba(255,255,255,.03),
+      rgba(255,255,255,.02),
       rgba(255,255,255,.01)
     );
 
-  text-align: center;
+  transition:
+    transform .4s ease,
+    border-color .4s ease;
+
 }
 
-.founder-card img {
-  width: 140px;
-  height: 140px;
+.founder-card:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(255, 255, 255, 0.3);
+}
+.founder-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.founder-card::before {
+  content: "";
+
+  position: absolute;
+
+  right: -120px;
+  bottom: -120px;
+
+  width: 200px;
+  height: 200px;
 
   border-radius: 50%;
 
-  object-fit: cover;
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.8) 0%,
+      rgba(255,255,255,0.3) 22%, 
+      rgba(255,255,255,0.08) 40%,
+      rgba(255,255,255,0.04) 60%,
+      transparent 80%
+    );
 
-  margin-bottom: 24px;
+  filter: blur(45px);
+
+  opacity: 0.9;
+
+  pointer-events: none;
+
+  z-index: 0;
 }
 
-.founder-card h3 {
+.founder-content,
+.founder-image-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+/* ==========================
+   IMAGE AREA
+========================== */
+
+.founder-image-wrapper {
+  position: relative;
+
+  height: 320px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.founder-glow {
+  position: absolute;
+
+  width: 330px;
+  height: 330px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,.18) 0%,
+      rgba(255,255,255,.08) 35%,
+      transparent 75%
+    );
+
+  filter: blur(40px);
+
+  left: 50%;
+  top: 45%;
+
+  transform: translate(-50%, -50%);
+}
+
+.founder-card img {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  max-width: 330px;
+
+  height: auto;
+
+  object-fit: contain;
+}
+
+/* ==========================
+   CONTENT
+========================== */
+
+.founder-content {
+  position: relative;
+
+  z-index: 2;
+
+  padding:
+    10px
+    34px
+    34px;
+}
+
+.founder-content h3 {
   margin-bottom: 8px;
 
-  font-size: 1.35rem;
+  font-size: 1.6rem;
+
+  font-weight: 700;
+
+  color: #fff;
 }
 
-.founder-card span {
+.founder-role {
   display: block;
 
-  margin-bottom: 16px;
+  font-size: .95rem;
 
-  color: rgba(255,255,255,.6);
+  text-transform: uppercase;
+
+  letter-spacing: .1em;
+
+  color: rgba(255,255,255,.65);
 }
 
-.founder-card p {
-  color: var(--text-secondary);
+.founder-divider {
+  width: 42px;
+  height: 2px;
 
-  line-height: 1.8;
+  margin:
+    22px
+    0
+    22px;
+
+  background:
+    rgba(255,255,255,.75);
 }
+
+.founder-content p {
+  color: rgba(255,255,255,.58);
+
+  line-height: 1.9;
+
+  font-size: 1rem;
+}
+
+/* ==========================
+   SOCIALS
+========================== */
 
 .founder-socials {
   display: flex;
 
   justify-content: center;
+  align-items: center;
 
   gap: 16px;
 
-  margin-top: 24px;
+  margin-top: 28px;
+
+  padding-top: 28px;
+
+  border-top:
+    1px solid rgba(255,255,255,.08);
 }
 
 .founder-socials a {
-  color: rgba(255,255,255,.65);
+  width: 48px;
+  height: 48px;
 
-  font-size: 1.1rem;
+  display: flex;
 
-  transition: .3s;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
+  color: rgba(255,255,255,.75);
+
+  font-size: 1.15rem;
+
+  transition: all .3s ease;
 }
 
 .founder-socials a:hover {
-  color: #22E7FF;
+  transform: translateY(-3px);
+
+  color: #ffffff;
+
+  border-color:
+    rgba(255,255,255,.18);
+
+  background:
+    rgba(255,255,255,.03);
 }
 
-@media (max-width: 991px) {
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 1100px) {
+  .founders-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+
+  .founders-section {
+    padding: 90px 0;
+  }
 
   .founders-grid {
     grid-template-columns: 1fr;
   }
 
+  .founders-header {
+    margin-bottom: 60px;
+  }
+
+  .founder-image-wrapper {
+    height: 320px;
+  }
+
+  .founder-content {
+    padding: 10px 26px 26px;
+  }
+
+  .founder-content h3 {
+    font-size: 1.7rem;
+  }
 }
+

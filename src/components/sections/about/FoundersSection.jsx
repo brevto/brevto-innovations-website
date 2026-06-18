@@ -1,7 +1,6 @@
 import React from "react";
 
 import Container from "../../layout/Container";
-
 import founders from "../../../data/founders";
 
 import {
@@ -15,9 +14,7 @@ import "../../../styles/foundersSection.css";
 const FoundersSection = () => {
   return (
     <section className="founders-section">
-
       <Container>
-
         <div className="founders-header">
 
           <span className="founders-tag">
@@ -25,8 +22,18 @@ const FoundersSection = () => {
           </span>
 
           <h2>
-            Meet The Founders
+            <span className="founders-main-text">
+              Meet The
+            </span>{" "}
+            <span className="founders-outlined">
+              Founders
+            </span>
           </h2>
+
+          <p className="founders-subtitle">
+            A team of builders, operators, and dreamers
+            driven to create extraordinary digital experiences.
+          </p>
 
         </div>
 
@@ -37,34 +44,58 @@ const FoundersSection = () => {
               className="founder-card"
               key={index}
             >
-              <img
-                src={founder.image}
-                alt={founder.name}
-              />
+              <div className="founder-image-wrapper">
 
-              <h3>{founder.name}</h3>
+                <div className="founder-glow"></div>
 
-              <span>
-                {founder.role}
-              </span>
+                <img
+                  src={founder.image}
+                  alt={founder.name}
+                />
 
-              <p>
-                {founder.bio}
-              </p>
+              </div>
 
-              <div className="founder-socials">
+              <div className="founder-content">
 
-                <a href={founder.linkedin}>
-                  <FaLinkedin />
-                </a>
+                <h3>{founder.name}</h3>
 
-                <a href={founder.twitter}>
-                  <FaXTwitter />
-                </a>
+                <span className="founder-role">
+                  {founder.role}
+                </span>
 
-                <a href={founder.github}>
-                  <FaGithub />
-                </a>
+                <div className="founder-divider"></div>
+
+                <p>
+                  {founder.bio}
+                </p>
+
+                <div className="founder-socials">
+
+                  <a
+                    href={founder.linkedin}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FaLinkedin />
+                  </a>
+
+                  <a
+                    href={founder.twitter}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FaXTwitter />
+                  </a>
+
+                  <a
+                    href={founder.github}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FaGithub />
+                  </a>
+
+                </div>
 
               </div>
 
@@ -72,9 +103,7 @@ const FoundersSection = () => {
           ))}
 
         </div>
-
       </Container>
-
     </section>
   );
 };

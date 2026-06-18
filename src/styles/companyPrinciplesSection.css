@@ -1,90 +1,228 @@
-/* Reset/Base for the section */
+/* =========================
+   SECTION
+========================= */
+
 .principles-section {
   padding: 120px 0;
-  background-color: #000; /* Matches the deep black in your image */
-  color: #ffffff;
+  background: #020308;
   overflow: hidden;
+
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
-/* Header Styling */
+/* =========================
+   HEADER
+========================= */
+
 .principles-header {
   text-align: center;
-  margin-bottom: 100px;
+  margin-bottom: 90px;
 }
 
-.principles-main-title {
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  line-height: 1;
-  font-weight: 800;
+.principles-tag {
+  display: inline-block;
+
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
-  letter-spacing: -0.02em;
+
+  color: rgba(255,255,255,0.8);
+
+  margin-bottom: 50px;
 }
 
-/* The magic outline effect */
-.outline-text {
+.principles-header h2 {
+  font-size: clamp(3rem, 7vw, 4.7rem);
+  line-height: 0.95;
+  /* font-weight: 800; */
+  /* letter-spacing: -0.05em; */
+
+
+  margin: 0;
+}
+
+.principles-main-text {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 1),
+    rgba(216, 216, 216, 0.95)
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
   color: transparent;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
 }
 
-/* Grid Layout */
+.text-outlined {
+  color: transparent;
+
+  -webkit-text-stroke: 1.5px rgba(255,255,255,0.9);
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.04em;
+  font-size: 1.5em;
+
+  /* KEEP YOUR EXISTING FONT */
+}
+
+/* =========================
+   GRID
+========================= */
+
 .principles-grid {
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+
+  gap: 22px;
 }
 
-/* Card Styling */
+/* =========================
+   CARD
+========================= */
+
 .principle-card {
-  padding: 50px 40px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.02);
-  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-  display: flex;
-  flex-direction: column;
-  min-height: 350px;
+  position: relative;
+
+  min-height: 420px;
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.025),
+      rgba(255,255,255,0.01)
+    );
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  overflow: hidden;
+
+  transition: all 0.4s ease;
 }
 
 .principle-card:hover {
-  border-color: rgba(255, 255, 255, 0.4);
-  background: rgba(255, 255, 255, 0.04);
-  transform: translateY(-10px);
+  border-color: rgba(255,255,255,0.15);
+
+  transform: translateY(-8px);
 }
 
-/* Small label (e.g., "PRINCIPLE 01") */
-.principle-label {
-  font-size: 0.75rem;
+.principle-card-inner {
+  position: relative;
+
+  z-index: 2;
+
+  padding: 52px 42px;
+
+  height: 100%;
+}
+
+/* =========================
+   NUMBER
+========================= */
+
+.principle-number {
+  display: block;
+
+  font-size: 2.2rem;
   font-weight: 700;
-  letter-spacing: 0.3em;
-  color: rgba(255, 255, 255, 0.5);
-  margin-bottom: 30px;
-  text-transform: uppercase;
+
+  color: rgba(255,255,255,0.55);
+
+  margin-bottom: 26px;
 }
 
-/* The Large Outlined Title in the card */
-.principle-title-outline {
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1;
-  font-weight: 900;
-  text-transform: uppercase;
-  margin-bottom: 24px;
+/* =========================
+   HEADING
+========================= */
+
+.principle-card-heading {
+  font-size: 2rem;
+  line-height: 1.15;
+  font-weight: 700;
+
+  color: var(--text-primary);
+
+  margin: 0;
+}
+
+.principle-heading-first-letter {
   color: transparent;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7);
-  transition: -webkit-text-stroke 0.3s ease;
+  font-size: 2.5rem;
+  /* gap after this letter of 5px and before the next letter */
+  letter-spacing: 2px;  
+  -webkit-text-stroke: 1.5px rgba(255,255,255,0.95);
+
 }
 
-.principle-card:hover .principle-title-outline {
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 1);
+/* =========================
+   DIVIDER
+========================= */
+
+.principle-divider {
+  width: 48px;
+  height: 2px;
+
+  background: rgba(255,255,255,0.55);
+
+  margin-top: 28px;
+  margin-bottom: 32px;
 }
 
-/* Description Text */
+/* =========================
+   DESCRIPTION
+========================= */
+
 .principle-description {
-  font-size: 1.05rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.6);
-  max-width: 90%;
+  font-size: 1.22rem;
+
+  line-height: 1.8;
+
+  color: rgba(255,255,255,0.58);
+
+  max-width: 95%;
 }
 
-/* Responsive Design */
+/* =========================
+   CORNER RINGS
+========================= */
+
+.card-corner-rings {
+  position: absolute;
+
+  right: -120px;
+  bottom: -120px;
+
+  width: 320px;
+  height: 320px;
+
+  border-radius: 50%;
+
+  opacity: 0.08;
+
+  background:
+    repeating-radial-gradient(
+      circle,
+      rgba(255,255,255,1) 0px,
+      rgba(255,255,255,1) 1px,
+      transparent 1px,
+      transparent 26px
+    );
+
+  pointer-events: none;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
 @media (max-width: 1024px) {
   .principles-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -92,16 +230,132 @@
 }
 
 @media (max-width: 768px) {
+  .principles-section {
+    padding: 90px 0;
+  }
+
   .principles-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .principles-header {
     margin-bottom: 60px;
   }
-  
+
   .principle-card {
     min-height: auto;
-    padding: 40px 30px;
   }
+
+  .principle-card-inner {
+    padding: 38px 28px;
+  }
+
+  .principle-card-heading {
+    font-size: 1.7rem;
+  }
+
+  .principle-description {
+    font-size: 1.05rem;
+  }
+}
+
+.principles-header::after {
+  content: "Three core principles that guide our work, shape our culture, and drive impact for our clients and partners.";
+
+  display: block;
+
+  max-width: 760px;
+
+  margin: 32px auto 0;
+
+  font-size: 1.3rem;
+  line-height: 1.6;
+
+  color: rgba(255,255,255,0.55);
+}
+
+
+.principle-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.principle-card::after {
+  content: "";
+  position: absolute;
+  right: -110px;
+  bottom: -110px;
+  width: 280px;
+  height: 280px;
+  pointer-events: none;
+  border-radius: 50%;
+  opacity: 0.55;
+  background:
+    radial-gradient(circle at center,
+      rgba(255, 255, 255, 0.25) 0%,
+      rgba(255, 255, 255, 0.12) 22%,
+      rgba(255, 255, 255, 0.06) 38%,
+      rgba(255, 255, 255, 0.03) 52%,
+      rgba(255, 255, 255, 0.00) 72%);
+  filter: blur(8px);
+  z-index: 0;
+}
+
+.principle-card::before {
+  content: "";
+  position: absolute;
+  right: -140px;
+  bottom: -140px;
+  width: 360px;
+  height: 360px;
+  pointer-events: none;
+  border-radius: 50%;
+  background:
+    repeating-radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.12) 0px,
+      rgba(255, 255, 255, 0.12) 1px,
+      transparent 1px,
+      transparent 34px
+    );
+  opacity: 0.18;
+  z-index: 0;
+}
+
+.principle-card-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.principles-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.principles-tag::before,
+.principles-tag::after {
+  content: "";
+  width: 50px; /* adjust length */
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    rgba(49, 49, 49, 0.95),
+    rgba(214, 214, 214, 0.95)
+  );
+}
+
+.principles-tag::after {
+  background: linear-gradient(
+    90deg,
+    rgba(214, 214, 214, 0.95),
+    rgba(49, 49, 49, 0.95)
+  );
 }

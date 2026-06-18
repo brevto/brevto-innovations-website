@@ -1,9 +1,9 @@
 const founders = [
   {
-    name: "Founder Name",
+    name: "Alok Kumar Singh",
     role: "CEO & Co-Founder",
 
-    image: "/images/founders/founder-1.jpg",
+    image: "/images/about/img1.png",
 
     bio:
       "Short founder introduction goes here.",
@@ -16,11 +16,11 @@ const founders = [
   },
 
   {
-    name: "Founder Name",
+    name: "Tushar Manaktala",
 
     role: "CTO & Co-Founder",
 
-    image: "/images/founders/founder-2.jpg",
+    image: "/images/about/img1.png",
 
     bio:
       "Short founder introduction goes here.",
@@ -33,11 +33,11 @@ const founders = [
   },
 
   {
-    name: "Founder Name",
+    name: "Renu Kumari",
 
-    role: "COO & Co-Founder",
+    role: "Co-Founder",
 
-    image: "/images/founders/founder-3.jpg",
+    image: "/images/about/img1.png",
 
     bio:
       "Short founder introduction goes here.",

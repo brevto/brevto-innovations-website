@@ -1,3 +1,91 @@
 .about-page {
   overflow: hidden;
+  background-color: #020308; 
+}
+
+/* ==========================================
+   ABOUT PAGE CTA OVERRIDES
+========================================== */
+
+.about-page .final-cta-card {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.015),
+      rgba(255,255,255,0.008)
+    );
+
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Replace cyan + purple glow with monochrome glow */
+.about-page .final-cta-card::before {
+  background:
+    radial-gradient(
+      850px circle at 15% 0%,
+      rgba(255,255,255,0.12),
+      transparent 55%
+    ),
+    radial-gradient(
+      700px circle at 100% 40%,
+      rgba(255,255,255,0.08),
+      transparent 65%
+    );
+
+  opacity: 0.9;
+}
+
+/* Left dots become bright white */
+.about-page .cta-dots-left {
+  color: rgba(255,255,255,0.75);
+}
+
+/* Right dots become subtle grey */
+.about-page .cta-dots-right {
+  color: rgba(255,255,255,0.35);
+}
+
+/* More premium heading */
+.about-page .final-cta-card h2 {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(252,252,252,0.98),
+      rgba(220,220,220,0.85)
+    );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Softer paragraph */
+.about-page .final-cta-card p {
+  color: rgba(255,255,255,0.65);
+}
+
+.about-page .final-cta-card::after {
+  content: "";
+
+  position: absolute;
+
+  right: -180px;
+  bottom: -180px;
+
+  width: 500px;
+  height: 500px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,0.12) 0%,
+      rgba(255,255,255,0.06) 35%,
+      transparent 75%
+    );
+
+  filter: blur(90px);
+
+  pointer-events: none;
 }
