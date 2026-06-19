@@ -1,94 +1,70 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Container from "./Container";
-// import "../../index.css";just 
+import navigation from "../../data/navigation";
+
 import "../../styles/index.css";
 import "../../styles/header.css";
-
-
+import { GoStack } from "react-icons/go";
 
 const Header = () => {
-
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
+  const toggleMenu = () => setMenuOpen((prev) => !prev);
+  const closeMenu = () => setMenuOpen(false);
 
-  const closeMenu = () => {
-    setMenuOpen(false);
-  };
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 540) {
+        setMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <header className="main-header">
-
       <Container className="header-container">
-
-        {/* LOGO */}
         <Link to="/" className="logo" onClick={closeMenu}>
-          <img className="logo-img" src="/icons/company-logo.png" alt="Brevto" />
-          {/* <span>Brevto</span>
-          <p>Innovations Pvt Ltd</p> */}
+          <img
+            className="logo-img"
+            src="/icons/company-logo.png"
+            alt="Brevto"
+          />
         </Link>
 
-
-
-        {/* NAVIGATION */}
         <nav className={`nav-menu ${menuOpen ? "active" : ""}`}>
-
-          <NavLink to="/" onClick={closeMenu}>
-            Home
-          </NavLink>
-
-          <NavLink to="/about" onClick={closeMenu}>
-            About
-          </NavLink>
-
-          <NavLink to="/products-services" onClick={closeMenu}>
-            Products & Services
-          </NavLink>
-
-          <NavLink to="/careers" onClick={closeMenu}>
-            Careers
-          </NavLink>
-
-          <NavLink to="/blogs" onClick={closeMenu}>
-            Blogs
-          </NavLink>
-
-          <NavLink to="/contact" onClick={closeMenu}>
-            Contact
-          </NavLink>
-
-          <NavLink to="/legal" onClick={closeMenu}>
-            Legal
-          </NavLink>
-
+          {navigation.map((item) => (
+            <NavLink
+              key={item.path}
+              to={item.path}
+              onClick={closeMenu}
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              {item.name}
+            </NavLink>
+          ))}
         </nav>
 
-        {/* CTA */}
         <div className="header-actions">
-
-          <Link to="/contact">
-            <button className="header-btn">
+          <Link to="/contact" onClick={closeMenu}>
+            <button className="header-btn" type="button">
               Get Started
             </button>
           </Link>
 
-          {/* MOBILE TOGGLE */}
           <button
             className={`menu-toggle ${menuOpen ? "open" : ""}`}
             onClick={toggleMenu}
+            type="button"
+            aria-label="Toggle navigation"
           >
-            <span></span>
-            <span></span>
-            <span></span>
+            <GoStack />
           </button>
-
         </div>
-
       </Container>
-
     </header>
   );
 };
