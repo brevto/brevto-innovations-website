@@ -1,48 +1,16 @@
 const blogs = [
   {
     id: 1,
-
-    category: "Startup",
-
-    title: "Building Premium Startup Websites",
-
+    category: "Engineering",
+    title: "5 reason your website is loosing customer.",
     excerpt:
-      "How modern startups establish trust and visibility through premium web experiences.",
-
-    author: "Brevto Team",
-
-    date: "May 2026",
+      "From slow load times to poor user experience, learn the five critical issues that may be pushing customers toward your competitors.",
+    date: "Jan 22, 2026",
+    readTime: "11 min read",
+    image: "/images/blogs/reason-your-website-loosing.png",
+    url: "/blogs/5-reason-your-website-is-losing-customers"
   },
 
-  {
-    id: 2,
-
-    category: "Design",
-
-    title: "Why Product-Led Design Matters",
-
-    excerpt:
-      "Understanding how product thinking improves user experience and scalability.",
-
-    author: "Brevto Team",
-
-    date: "May 2026",
-  },
-
-  {
-    id: 3,
-
-    category: "Technology",
-
-    title: "The Future of Web Experiences",
-
-    excerpt:
-      "Exploring immersive interfaces, frontend systems, and modern digital interactions.",
-
-    author: "Brevto Team",
-
-    date: "May 2026",
-  },
 ];
 
-export default blogs;
+export default blogs; 

@@ -1,8 +1,8 @@
 import React from "react";
 
-const Tag = ({ children }) => {
+const Tag = ({ children, className = "" }) => {
   return (
-    <span className="ui-tag">
+    <span className={`ui-tag ${className}`.trim()}>
       {children}
     </span>
   );
