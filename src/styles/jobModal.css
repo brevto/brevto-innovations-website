@@ -1,0 +1,477 @@
+/* =========================
+   Modal Overlay
+========================= */
+.job-modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: rgba(2, 8, 23, 0.8);
+  backdrop-filter: blur(12px);
+
+  z-index: 9999;
+
+  animation: fadeIn 0.25s ease;
+}
+
+/* =========================
+   Modal Card
+========================= */
+.job-modal {
+  position: relative;
+
+  width: min(900px, 100%);
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  border-radius: 28px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(16, 24, 40, 0.95),
+      rgba(5, 12, 24, 0.95)
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(0, 212, 255, 0.05);
+
+  color: #f8fafc;
+
+  animation: modalPop 0.3s ease;
+}
+
+/* =========================
+   Header
+========================= */
+.job-modal-header {
+  padding: 32px 32px 24px;
+
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.job-modal-title {
+  margin: 0;
+
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.job-modal-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin-top: 18px;
+}
+
+.job-tag {
+  padding: 8px 14px;
+
+  border-radius: 999px;
+
+  background: rgba(0, 212, 255, 0.08);
+
+  border: 1px solid rgba(0, 212, 255, 0.15);
+
+  color: #7dd3fc;
+
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* =========================
+   Content
+========================= */
+.job-modal-content {
+  padding: 32px;
+}
+
+.job-modal-content p {
+  color: rgba(255,255,255,0.8);
+  line-height: 1.8;
+}
+
+.job-modal-content h4 {
+  margin-top: 16px;
+  margin-bottom: 16px;
+
+  color: white;
+
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.job-modal-content ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.job-modal-content li {
+  position: relative;
+
+  padding-left: 26px;
+  margin-bottom: 14px;
+
+  color: rgba(255,255,255,0.82);
+  line-height: 1.7;
+}
+
+.job-modal-content li::before {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  top: 11px;
+
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    #22d3ee,
+    #3b82f6
+  );
+}
+
+/* =========================
+   Footer
+========================= */
+.job-modal-footer {
+  position: sticky;
+  bottom: 0;
+
+  display: flex;
+  justify-content: flex-end;
+
+  padding: 24px 32px;
+
+  background: rgba(5,12,24,0.95);
+
+  border-top: 1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(20px);
+}
+
+/* =========================
+   Close Button
+========================= */
+.job-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  width: 44px;
+  height: 44px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: rgba(255,255,255,0.06);
+
+  color: white;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.job-modal-close:hover {
+  background: rgba(34,211,238,0.15);
+
+  transform: rotate(90deg);
+}
+
+/* =========================
+   Scrollbar
+========================= */
+.job-modal::-webkit-scrollbar {
+  width: 8px;
+}
+
+.job-modal::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    #22d3ee,
+    #3b82f6
+  );
+
+  border-radius: 999px;
+}
+
+/* =========================
+   Animations
+========================= */
+@keyframes modalPop {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* =========================
+   Overview Grid
+========================= */
+.job-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 16px;
+
+  padding: 28px 32px;
+
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.overview-item {
+  padding: 18px;
+
+  border-radius: 18px;
+
+  background: rgba(255,255,255,0.03);
+
+  border: 1px solid rgba(255,255,255,0.06);
+
+  transition: all 0.25s ease;
+}
+
+.overview-item:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(34,211,238,0.25);
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.25),
+    0 0 20px rgba(34,211,238,0.08);
+}
+
+.overview-item span {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 0.8rem;
+
+  color: rgba(255,255,255,0.55);
+
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.overview-item strong {
+  display: block;
+
+  color: #fff;
+
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* =========================
+   Sections
+========================= */
+.job-section:not(:first-child) {
+  margin-top: 4px;
+}
+
+.job-section h4 {
+  position: relative;
+
+  padding-left: 18px;
+}
+
+.job-section h4::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 4px;
+  height: 22px;
+
+  border-radius: 999px;
+
+  background: linear-gradient(
+    180deg,
+    #22d3ee,
+    #3b82f6
+  );
+}
+
+/* =========================
+   Tech Stack
+========================= */
+.job-tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-top: 16px;
+}
+
+.job-tech-badge {
+  position: relative;
+
+  padding: 10px 18px;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(34, 211, 238, 0.12),
+      rgba(59, 130, 246, 0.12)
+    );
+
+  border: 1px solid rgba(34, 211, 238, 0.22);
+
+  color: #eafcff;
+
+  font-size: 0.85rem;
+  font-weight: 600;
+
+  backdrop-filter: blur(16px);
+
+  transition: all 0.25s ease;
+}
+
+.job-tech-badge:hover {
+  transform: translateY(-3px);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(34, 211, 238, 0.2),
+      rgba(59, 130, 246, 0.2)
+    );
+
+  border-color: rgba(34, 211, 238, 0.4);
+
+  box-shadow:
+    0 10px 24px rgba(34, 211, 238, 0.12),
+    0 0 24px rgba(59, 130, 246, 0.08);
+}
+/* =========================
+   Footer
+========================= */
+.job-modal-footer {
+  position: sticky;
+  bottom: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 24px 32px;
+
+  background: rgba(5,12,24,0.96);
+
+  border-top: 1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(20px);
+}
+
+.job-footer-info {
+  color: rgba(255,255,255,0.65);
+
+  font-size: 0.9rem;
+}
+
+/* =========================
+   Better Modal Header
+========================= */
+.job-modal-title {
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #cbd5e1
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  margin-right: 60px;
+}
+
+.job-modal-header {
+  position: relative;
+}
+
+/* =========================
+   Scrollbar
+========================= */
+.job-modal::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.03);
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 900px) {
+  .job-overview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+
+  .job-modal {
+    width: 100%;
+    max-height: 100vh;
+
+    border-radius: 20px;
+  }
+
+  .job-modal-header,
+  .job-modal-content,
+  .job-overview-grid,
+  .job-modal-footer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .job-overview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .job-modal-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .job-footer-info {
+    text-align: center;
+  }
+
+  .job-modal-title {
+    font-size: 1.8rem;
+  }
+}
