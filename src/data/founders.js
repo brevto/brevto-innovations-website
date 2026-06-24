@@ -3,16 +3,16 @@ const founders = [
     name: "Alok Kumar Singh",
     role: "CEO & Co-Founder",
 
-    image: "/images/about/img1.png",
+    image: "/images/about/Alok-Kumar-Singh.png",
 
     bio:
-      "Short founder introduction goes here.",
+      "Visionary leader with a passion for building digital solutions that drive business growth and impact.",
 
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/alok-kumar-singh-3ab304261",
 
-    twitter: "#",
+    twitter: "https://x.com/DJALCO17062",
 
-    github: "#",
+    github: "https://github.com/sundarAlok",
   },
 
   {
@@ -20,16 +20,16 @@ const founders = [
 
     role: "CTO & Co-Founder",
 
-    image: "/images/about/img1.png",
+    image: "/images/about/Tushar-Manaktala.png",
 
     bio:
-      "Short founder introduction goes here.",
+      "Tech enthusiast and problem solver, focused on creating smart, scalable and future-ready solutions.",
 
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/tushar-manaktala",
 
-    twitter: "#",
+    twitter: "https://x.com/_Garud_19",
 
-    github: "#",
+    github: "https://github.com/Tushar-cyber19",
   },
 ];
 

@@ -7,7 +7,7 @@ const services = [
       "Premium startup and business websites focused on modern branding and launch credibility.",
 
     icon: "01",
-    image: "/images/productServices/service.png",
+    image: "/images/productServices/startup-website-design.png",
   },
 
   {
@@ -18,7 +18,7 @@ const services = [
       "Scalable frontend systems engineered for responsiveness, performance, and user experience.",
 
     icon: "02",
-    image: "/images/productServices/service.png",
+    image: "/images/productServices/frontend-development.png",
 
   },
 
@@ -30,7 +30,7 @@ const services = [
       "High-conversion landing pages for startups, SaaS products, and digital launches.",
 
     icon: "03",
-    image: "/images/productServices/service.png",
+    image: "/images/productServices/landing-experience.png",
   },
 
   {
@@ -41,7 +41,7 @@ const services = [
       "Modern product showcase systems designed for engagement and storytelling.",
 
     icon: "04",
-    image: "/images/productServices/service.png",
+    image: "/images/productServices/product-presentation-website.png",
   },
 
   {
@@ -52,7 +52,7 @@ const services = [
       "Premium interface systems balancing usability, aesthetics, and scalability.",
 
     icon: "05",
-    image: "/images/productServices/service.png",
+    image: "/images/productServices/ui-ux-experience-design.png",
   },
 
   {
@@ -63,7 +63,7 @@ const services = [
       "Helping startups establish launch-ready digital presence and product visibility.",
 
     icon: "06",
-    image: "/images/productServices/service.png",
+    image: "/images/productServices/launch-support-website.png",
   },
 ];
 

@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Container from "../components/layout/Container";
 
 import services from "../data/services";
 
 import "../styles/productsservices.css";
+import LearnMoreButton from "../components/ui/LearnMoreButton";
+import ServiceModal from "../components/ui/ServiceModal";
+import learnMoreData from "../data/learn-more-button";
 
 const ProductsServices = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState(null);
   return (
     <div className="products-page">
 
@@ -70,7 +75,15 @@ const ProductsServices = () => {
             {service.description}
           </p>
 
-          {/* put a "Learn more button here" which is associated with opening a modal when click which have respective info. create learn-more-button.js in data folder and add some repective one.*/}
+          {/* Learn more button — opens modal (placeholder onClick) */}
+          <div style={{ marginTop: 18 }}>
+            <LearnMoreButton
+              onClick={() => {
+                setSelectedService(service.id);
+                setModalOpen(true);
+              }}
+            />
+          </div>
 
         </div>
 
@@ -91,6 +104,12 @@ const ProductsServices = () => {
   </Container>
 
 </section>
+
+  <ServiceModal
+    open={modalOpen}
+    onClose={() => setModalOpen(false)}
+    data={learnMoreData[selectedService]}
+  />
 
     </div>
   );

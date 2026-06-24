@@ -175,7 +175,7 @@
 .service-image-wrapper {
   position: relative;
 
-  height: 25rem;
+  height: 23rem;
 
   border-radius: 28px;
 
@@ -197,6 +197,74 @@
 
 .service-showcase-item:hover .service-image {
   transform: scale(1.04);
+}
+
+/* Learn More Button */
+.learn-more-btn {
+  display: inline-block;
+  padding: 14px 24px;
+  border-radius: 12px;
+  background: transparent; /* transparent default */
+  color: #fff; /* white text */
+  border: 1px solid rgba(255,255,255,0.16); /* subtle white outline */
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease, transform 0.18s ease;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.learn-more-btn:hover,
+.learn-more-btn:focus {
+  outline: none;
+  background: var(--primary-gradient); /* same gradient as .service-number */
+  border-color: transparent;
+  transform: translateY(-2px);
+}
+
+/* Service modal */
+.service-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1200;
+  padding: 24px;
+}
+
+.service-modal {
+  background: linear-gradient(180deg, #06101b, #071827);
+  border-radius: 16px;
+  padding: 28px;
+  max-width: 720px;
+  width: 100%;
+  color: #fff;
+  position: relative;
+  border: 1px solid rgba(34,231,255,0.12);
+  box-shadow: 0 30px 60px rgba(2,8,20,0.6);
+}
+
+.service-modal h3 {
+  margin: 0 0 12px 0;
+  font-size: 1.35rem;
+}
+
+.service-modal-body {
+  color: rgba(255,255,255,0.85);
+  line-height: 1.7;
+}
+
+.service-modal-close {
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  background: transparent;
+  color: rgba(255,255,255,0.9);
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
 }
 
 @media (max-width: 992px) {
