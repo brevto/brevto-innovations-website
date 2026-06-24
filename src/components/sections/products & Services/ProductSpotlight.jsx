@@ -1,9 +1,9 @@
 // ProductSpotlight.jsx (updated)
 import React from "react";
-import Container from "../layout/Container";
-import "../../styles/ProductSpotlight.css";
-import Card from "../ui/Card";
-import Button from "../ui/Button";
+import Container from "../../layout/Container";
+import "../../../styles/ProductSpotlight.css";
+import Card from "../../ui/Card";
+import Button from "../../ui/Button";
 
 const ProductSpotlight = () => {
   return (

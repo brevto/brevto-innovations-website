@@ -31,23 +31,6 @@ const founders = [
 
     github: "#",
   },
-
-  {
-    name: "Renu Kumari",
-
-    role: "Co-Founder",
-
-    image: "/images/about/img1.png",
-
-    bio:
-      "Short founder introduction goes here.",
-
-    linkedin: "#",
-
-    twitter: "#",
-
-    github: "#",
-  },
 ];
 
 export default founders;

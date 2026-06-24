@@ -2,13 +2,6 @@ import React from "react";
 
 import Container from "../components/layout/Container";
 
-import SectionHeading from "../components/ui/SectionHeading";
-import Card from "../components/ui/Card";
-import Grid from "../components/ui/Grid";
-
-import ProductSpotlight from "../components/sections/ProductSpotlight";
-import FinalCTASection from "../components/sections/FinalCTASection";
-
 import services from "../data/services";
 
 import "../styles/productsservices.css";
@@ -17,56 +10,87 @@ const ProductsServices = () => {
   return (
     <div className="products-page">
 
+      {/* HERO */}
+
       <section className="products-hero">
 
         <Container>
 
-          <SectionHeading
-            center={true}
-            tag="Products & Services"
-            title="Digital Products & Startup Solutions"
-            description="Modern digital experiences built for startups and ambitious brands."
+          <div className="products-hero-content">
+
+            <h1 className="products-title">
+              Digital <span className="outline-text">PRODUCTS</span>
+
+              <br />
+
+              <span className="product-title-and">&</span>
+
+              <br />
+                STARTUP <span className="outline-text">SOLUTIONS
+              </span>
+            </h1>
+
+            <p className="products-description">
+              Modern digital experiences built for startups
+              and ambitious brands.
+            </p>
+
+          </div>
+
+        </Container>
+
+      </section>
+
+      {/* SERVICES */}
+
+      <section className="services-showcase">
+
+  <Container>
+
+    {services.map((service, index) => (
+
+      <div
+        key={service.id}
+        className={`service-showcase-item ${
+          index % 2 ? "reverse" : ""
+        }`}
+      >
+
+        <div className="service-content">
+
+          <div className="service-number product-service-number">
+            {service.icon}
+          </div>
+
+          <h2>
+            {service.title}
+          </h2>
+
+          <p>
+            {service.description}
+          </p>
+
+          {/* put a "Learn more button here" which is associated with opening a modal when click which have respective info. create learn-more-button.js in data folder and add some repective one.*/}
+
+        </div>
+
+        <div className="service-image-wrapper">
+
+          <img
+            src={service.image}
+            alt={service.title}
+            className="service-image"
           />
 
-        </Container>
+        </div>
 
-      </section>
+      </div>
 
-      <section className="services-list-section">
+    ))}
 
-        <Container>
+  </Container>
 
-          <Grid columns={3}>
-
-            {services.map((service) => (
-
-              <Card key={service.id}>
-
-                <div className="service-number">
-                  {service.icon}
-                </div>
-
-                <h3>
-                  {service.title}
-                </h3>
-
-                <p>
-                  {service.description}
-                </p>
-
-              </Card>
-
-            ))}
-
-          </Grid>
-
-        </Container>
-
-      </section>
-
-      {/* <ProductSpotlight /> */}
-
-      <FinalCTASection />
+</section>
 
     </div>
   );

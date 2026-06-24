@@ -127,9 +127,11 @@
 .founders-grid {
   display: grid;
 
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 
-  gap: 28px;
+  gap: 100px;
+
+  padding: 0 120px;
 }
 
 /* ==========================
@@ -328,7 +330,7 @@
   justify-content: center;
   align-items: center;
 
-  gap: 16px;
+  gap: 25px;
 
   margin-top: 28px;
 
