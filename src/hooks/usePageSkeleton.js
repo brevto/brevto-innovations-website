@@ -1,17 +1,22 @@
 import { useEffect, useState } from "react";
 
-const usePageSkeleton = (delay = 1500) => {
-  const [isLoading, setIsLoading] = useState(true);
+const usePageSkeleton = (loading) => {
+  const [showSkeleton, setShowSkeleton] = useState(false);
 
   useEffect(() => {
+    if (!loading) {
+      setShowSkeleton(false);
+      return;
+    }
+
     const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, delay);
+      setShowSkeleton(true);
+    }, 2000);
 
     return () => clearTimeout(timer);
-  }, [delay]);
+  }, [loading]);
 
-  return isLoading;
+  return showSkeleton;
 };
 
 export default usePageSkeleton;

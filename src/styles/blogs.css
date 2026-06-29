@@ -2,6 +2,27 @@
    BLOG HERO
 ======================================== */
 
+.blogs-page {
+  background:
+    radial-gradient(circle at top left, rgba(0, 0, 0, 0.027), transparent 70%),
+    linear-gradient(135deg, #010103, #00050c);
+  position: relative;
+  overflow: hidden;
+}
+
+.blogs-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.75;
+}
+
 .blogs-hero {
   position: relative;
 
@@ -9,18 +30,7 @@
 
   overflow: hidden;
 
-  /* black bg like about page */
-  background:
-    radial-gradient(
-      circle at top left,
-      rgba(0, 0, 0, 0.027),
-      transparent 70%
-    ),
-    linear-gradient(
-      135deg,
-      #010103,
-      #00050c
-    );
+  z-index: 1;
 }
 
 .blogs-hero-content {
@@ -60,18 +70,9 @@
 ======================================== */
 
 .blogs-grid-section {
+  position: relative;
+  z-index: 1;
   padding: 150px 0 250px;
-  background:
-    radial-gradient(
-      circle at top left,
-      rgba(0, 0, 0, 0.027),
-      transparent 70%
-    ),
-    linear-gradient(
-      135deg,
-      #010103,
-      #00050c
-    );
 
   display: flex;
   flex-direction: column;
