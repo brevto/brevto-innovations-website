@@ -1,5 +1,13 @@
 import React from "react";
 
+const scrollToFooter = () => {
+  const footer = document.querySelector("footer");
+
+  if (footer) {
+    footer.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+};
+
 import Container from "../layout/Container";
 
 import Button from "../ui/Button";
@@ -22,7 +30,7 @@ const ContactCTASection = () => {
             and premium technology experiences.
           </p>
 
-          <Button variant="primary">
+          <Button variant="primary" onClick={scrollToFooter}>
             Contact Now
           </Button>
 

@@ -6,6 +6,8 @@ const TextArea = ({
   onChange,
   rows = 6,
   name,
+  id,
+  required = false,
 }) => {
   return (
     <textarea
@@ -15,6 +17,8 @@ const TextArea = ({
       onChange={onChange}
       rows={rows}
       name={name}
+      id={id}
+      required={required}
     />
   );
 };
