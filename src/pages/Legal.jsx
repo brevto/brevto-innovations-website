@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Container from "../components/layout/Container";
 
@@ -10,6 +10,47 @@ import legal from "../data/legal";
 import "../styles/legal.css";
 
 const Legal = () => {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const sections = [
+    {
+      title: "Privacy Policy",
+      content: legal.privacyPolicy,
+    },
+    {
+      title: "Terms of Service",
+      content: legal.termsOfService,
+    },
+    {
+      title: "Cookie Policy",
+      content: legal.cookiePolicy,
+    },
+    {
+      title: "Data Security",
+      content: legal.dataSecurity,
+    },
+    {
+      title: "Intellectual Property",
+      content: legal.intellectualProperty,
+    },
+    {
+      title: "Disclaimer",
+      content: legal.disclaimer,
+    },
+    {
+      title: "Limitation of Liability",
+      content: legal.limitationOfLiability,
+    },
+    {
+      title: "Company Notice",
+      content: legal.companyNotice,
+    },
+  ];
+
+  const toggleSection = (index) => {
+    setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
+  };
+
   return (
     <div className="legal-page">
 
@@ -19,9 +60,13 @@ const Legal = () => {
 
           <SectionHeading
             center={true}
-            tag="Legal"
-            title="Privacy, Terms & Policies"
-            description="Important company-related legal information and usage terms."
+            title={
+              <>
+                <span className="legal-hero-title-line"><span className="outline-text">P</span>rivacy</span>
+                <span className="legal-hero-title-line legal-hero-title-offset"><span className="outline-text">T</span>erms</span>
+                <span className="legal-hero-title-line legal-hero-title-offset-large"><span className="outline-text">P</span>olicies</span>
+              </>
+            }
           />
 
         </Container>
@@ -32,44 +77,25 @@ const Legal = () => {
 
         <Container>
 
-          <div className="legal-grid">
+          <div className="legal-accordion">
+            {sections.map((section, index) => (
+              <Card className={`legal-accordion-card ${openIndex === index ? "open" : ""}`} key={section.title}>
+                <button
+                  type="button"
+                  className="legal-accordion-header"
+                  onClick={() => toggleSection(index)}
+                >
+                  <h3>{section.title}</h3>
+                  <span className={`legal-accordion-arrow ${openIndex === index ? "open" : ""}`}>
+                    ›
+                  </span>
+                </button>
 
-            <Card>
-
-              <h3>
-                Privacy Policy
-              </h3>
-
-              <p>
-                {legal.privacyPolicy}
-              </p>
-
-            </Card>
-
-            <Card>
-
-              <h3>
-                Terms of Service
-              </h3>
-
-              <p>
-                {legal.termsOfService}
-              </p>
-
-            </Card>
-
-            <Card>
-
-              <h3>
-                Company Notice
-              </h3>
-
-              <p>
-                {legal.companyNotice}
-              </p>
-
-            </Card>
-
+                <div className={`legal-accordion-body ${openIndex === index ? "open" : ""}`}>
+                  <p>{section.content}</p>
+                </div>
+              </Card>
+            ))}
           </div>
 
         </Container>
