@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   BrowserRouter,
   Routes,
   Route,
+  useLocation,
 } from "react-router-dom";
 
 import Layout from "./components/layout/Layout";
+
+const ScrollToTop = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, [location.pathname]);
+
+  return null;
+};
 
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -19,6 +30,8 @@ import "./styles/global.css";
 const App = () => {
   return (
     <BrowserRouter>
+
+      <ScrollToTop />
 
       <Layout>
 
