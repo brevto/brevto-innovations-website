@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 
+import PageSkeleton from "../components/ui/PageSkeleton";
+import usePageSkeleton from "../hooks/usePageSkeleton";
+
 import Container from "../components/layout/Container";
 
 import services from "../data/services";
@@ -10,8 +13,12 @@ import ServiceModal from "../components/ui/ServiceModal";
 import learnMoreData from "../data/learn-more-button";
 
 const ProductsServices = () => {
+  const isLoading = usePageSkeleton();
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedService, setSelectedService] = useState(null);
+
+  if (isLoading) return <PageSkeleton variant="cards" />;
+
   return (
     <div className="products-page">
 

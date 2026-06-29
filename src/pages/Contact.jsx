@@ -1,5 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 
+import PageSkeleton from "../components/ui/PageSkeleton";
+import usePageSkeleton from "../hooks/usePageSkeleton";
+
 import Container from "../components/layout/Container";
 
 import SectionHeading from "../components/ui/SectionHeading";
@@ -13,6 +16,7 @@ import ContactCTASection from "../components/sections/ContactCTASection";
 import "../styles/contact.css";
 
 const Contact = () => {
+  const isLoading = usePageSkeleton();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -135,6 +139,10 @@ const Contact = () => {
 
   return (
     <div className="contact-page">
+      {isLoading && <PageSkeleton variant="hero" />}
+      {!isLoading && (
+        <>
+
       {/* HERO */}
       <section className="contact-hero">
         <Container>
@@ -263,6 +271,9 @@ const Contact = () => {
 
       {/* CTA */}
       <ContactCTASection />
+
+        </>
+      )}
     </div>
   );
 };

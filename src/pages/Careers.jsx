@@ -1,5 +1,8 @@
 import React, { useMemo, useState } from "react";
 
+import PageSkeleton from "../components/ui/PageSkeleton";
+import usePageSkeleton from "../hooks/usePageSkeleton";
+
 import Container from "../components/layout/Container";
 import Button from "../components/ui/Button";
 import JobModal from "../components/ui/JobModal";
@@ -10,6 +13,7 @@ import "../styles/careers.css";
 import "../styles/jobModal.css";
 
 const Careers = () => {
+const isLoading = usePageSkeleton();
 const [query, setQuery] = useState("");
 const [selectedDepartment, setSelectedDepartment] = useState("All");
 const [modalOpen, setModalOpen] = useState(false);
@@ -48,6 +52,9 @@ return careers.filter((career) => {
 
 return ( <div className="careers-page">
 
+  {isLoading && <PageSkeleton variant="list" />}
+  {!isLoading && (
+    <>
 
   <section className="careers-hero">
     <Container>
@@ -234,6 +241,9 @@ return ( <div className="careers-page">
     onClose={() => setModalOpen(false)}
     job={selectedJob}
   />
+
+    </>
+  )}
 
 </div>
 

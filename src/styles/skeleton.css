@@ -1,0 +1,182 @@
+/* =========================
+   Page Skeleton Styles
+========================= */
+
+.page-skeleton {
+  width: 100%;
+  min-height: 100vh;
+  padding: 90px 0;
+  background: inherit;
+  animation: fadeOut 0.4s ease 1.8s forwards;
+}
+
+.skeleton-section {
+  padding: 60px 0;
+}
+
+.skeleton-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* =========================
+   Hero Skeleton
+========================= */
+
+.hero-skeleton {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 90px 0 95px;
+}
+
+.skeleton-line {
+  height: 12px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.05)
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.skeleton-title {
+  height: 32px;
+  margin-bottom: 24px;
+}
+
+.skeleton-title.short {
+  width: 60%;
+}
+
+.skeleton-subtitle {
+  height: 16px;
+  width: 80%;
+  margin-bottom: 32px;
+}
+
+.skeleton-buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.skeleton-button {
+  height: 48px;
+  width: 180px;
+  border-radius: 8px;
+  background: linear-gradient(
+    90deg,
+    rgba(56, 189, 248, 0.1),
+    rgba(56, 189, 248, 0.15),
+    rgba(56, 189, 248, 0.1)
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* =========================
+   Card Grid Skeleton
+========================= */
+
+.card-grid-skeleton {
+  padding: 60px 0;
+}
+
+.card-grid-skeleton .skeleton-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.skeleton-card {
+  padding: 24px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  min-height: 200px;
+}
+
+.skeleton-card-header {
+  height: 120px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.05)
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* =========================
+   List Skeleton
+========================= */
+
+.list-skeleton {
+  padding: 60px 0;
+}
+
+.skeleton-list-item {
+  padding: 20px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  min-height: 80px;
+}
+
+.skeleton-list-item .skeleton-line {
+  margin-bottom: 12px;
+}
+
+.skeleton-list-item .skeleton-line.short {
+  width: 40%;
+  margin-bottom: 0;
+}
+
+/* =========================
+   Animations
+========================= */
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  100% {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .skeleton-title {
+    height: 24px;
+  }
+
+  .skeleton-button {
+    flex: 1;
+  }
+
+  .card-grid-skeleton .skeleton-container {
+    grid-template-columns: 1fr;
+  }
+}

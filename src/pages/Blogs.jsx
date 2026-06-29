@@ -1,5 +1,8 @@
 import React from "react";
 
+import PageSkeleton from "../components/ui/PageSkeleton";
+import usePageSkeleton from "../hooks/usePageSkeleton";
+
 import Container from "../components/layout/Container";
 import Grid from "../components/ui/Grid";
 import Tag from "../components/ui/Tag";
@@ -9,6 +12,10 @@ import blogs from "../data/blogs";
 import "../styles/blogs.css";
 
 const Blogs = () => {
+  const isLoading = usePageSkeleton();
+
+  if (isLoading) return <PageSkeleton variant="cards" />;
+
   return (
     <div className="blogs-page">
 

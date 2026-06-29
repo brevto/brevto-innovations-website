@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 
+import PageSkeleton from "../components/ui/PageSkeleton";
+import usePageSkeleton from "../hooks/usePageSkeleton";
+
 import Container from "../components/layout/Container";
 
 import SectionHeading from "../components/ui/SectionHeading";
@@ -10,6 +13,7 @@ import legal from "../data/legal";
 import "../styles/legal.css";
 
 const Legal = () => {
+  const isLoading = usePageSkeleton();
   const [openIndex, setOpenIndex] = useState(null);
 
   const sections = [
@@ -53,6 +57,9 @@ const Legal = () => {
 
   return (
     <div className="legal-page">
+      {isLoading && <PageSkeleton variant="default" />}
+      {!isLoading && (
+        <>
 
       <section className="legal-hero">
 
@@ -102,6 +109,8 @@ const Legal = () => {
 
       </section>
 
+        </>
+      )}
     </div>
   );
 };
