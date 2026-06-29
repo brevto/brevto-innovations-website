@@ -51,15 +51,15 @@ const Footer = () => {
                 </defs>
               </svg>
 
-              <a href="#" aria-label="Instagram">
+              <a href="https://www.instagram.com/brevto.official/" target="_blank" rel="noreferrer" aria-label="Instagram">
                 <FaInstagram className="gradient-icon" />
               </a>
 
-              <a href="#" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/brevto-innovations-private-limited-88a1b4419/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
                 <FaLinkedinIn className="gradient-icon" />
               </a>
 
-              <a href="#" aria-label="Twitter">
+              <a href="https://x.com/Brevto_official" target="_blank" rel="noreferrer" aria-label="Twitter">
                 <FaTwitter className="gradient-icon" />
               </a>
 

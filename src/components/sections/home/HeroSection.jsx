@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 import Container from "../../layout/Container";
 
@@ -9,6 +10,8 @@ import GlowOrb from "../../ui/GlowOrb";
 import DotsBackground from "../../ui/DotsBackground";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="hero-section">
 
@@ -37,11 +40,11 @@ const HeroSection = () => {
 
           <div className="hero-buttons">
 
-            <Button variant="primary">
+            <Button variant="primary" onClick={() => navigate("/products-services")}> 
               Explore Services
             </Button>
 
-            <Button variant="secondary">
+            <Button variant="secondary" onClick={() => navigate("/products-services")}>
               Discover Products
             </Button>
 

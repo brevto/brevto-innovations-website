@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 import Container from "../layout/Container";
 import "../../styles/FinalCTASection.css";
@@ -6,6 +7,8 @@ import "../../styles/FinalCTASection.css";
 import Button from "../ui/Button";
 
 const FinalCTASection = ({ className = "" }) => {
+  const navigate = useNavigate();
+
   return (
     <section className="final-cta-section">
 
@@ -36,7 +39,7 @@ const FinalCTASection = ({ className = "" }) => {
             <span></span>
           </div>
 
-          <Button variant="primary">
+          <Button variant="primary" onClick={() => navigate("/contact")}>
             Start a Conversation
           </Button>
 
