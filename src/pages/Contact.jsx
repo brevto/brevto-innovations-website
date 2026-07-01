@@ -150,10 +150,12 @@ const Contact = () => {
             center
             title={
               <>
-                Let&apos;s <span className="outline-text">Build</span>{" "}
+                <span className="hero-filled-text">Let&apos;s</span>{" "}
+                <span className="outline-text">Build</span>{" "}
                 <br />
                 <span className="hero-line-two">
-                  Something <span className="outline-text">Great</span>
+                  <span className="hero-filled-text">Something</span>{" "}
+                  <span className="outline-text">Great</span>
                 </span>
               </>
             }

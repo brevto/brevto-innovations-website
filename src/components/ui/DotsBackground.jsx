@@ -4,11 +4,13 @@ import "../../styles/dots.css";
 // No external libraries required.
 
 const DotsBackground = ({
-  dotColor = "rgba(230,230,230,0.7)",
-  lineColor = "rgba(200,200,200,0.5)",
+  dotColor = "rgba(230, 230, 230, 0.73)",
+  lineColor = "rgba(255,255,255,0.99)",
 
-  maxDistance = 170,
-  density = 0.00035,
+  minDistance = 90,
+  maxDistance = 400,
+  connectionDistance = 270,
+  density = 0.0005,
   className = "",
 }) => {
   const canvasRef = useRef(null);
@@ -27,17 +29,44 @@ const DotsBackground = ({
     const rand = (min, max) => min + Math.random() * (max - min);
 
     const buildDots = () => {
-      const area = w * h;
-      const count = Math.max(45, Math.floor(area * density));
-      const dots = new Array(count).fill(0).map(() => ({
-        x: rand(0, w),
-        y: rand(0, h),
-        r: rand(1.8, 3.2), // slightly larger dots
-        vx: rand(-0.1, 0.3), // slightly faster horizontal movement
-        vy: rand(-0.1, 0.3), // slightly faster vertical movement
-      }));
-      return dots;
+  const area = w * h;
+  const count = Math.max(24, Math.floor(area * density));
+
+  const dots = [];
+  const maxAttempts = count * 100;
+
+  let attempts = 0;
+
+  while (dots.length < count && attempts < maxAttempts) {
+    attempts++;
+
+    const candidate = {
+      x: rand(0, w),
+      y: rand(0, h),
+      r: rand(1.4, 2.4),
+      vx: rand(-0.5, 0.5),
+      vy: rand(-0.5, 0.5),
     };
+
+    let valid = true;
+
+    for (const p of dots) {
+      const dx = candidate.x - p.x;
+      const dy = candidate.y - p.y;
+
+      if (Math.hypot(dx, dy) < minDistance) {
+        valid = false;
+        break;
+      }
+    }
+
+    if (valid) {
+      dots.push(candidate);
+    }
+  }
+
+  return dots;
+};
 
     let dots = [];
 
@@ -87,9 +116,9 @@ const DotsBackground = ({
           const dx = a.x - b.x;
           const dy = a.y - b.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < maxDistance) {
-            const t = 1 - dist / maxDistance;
-            const alpha = (0.02 + 0.12 * t).toFixed(3);
+          if (dist <= connectionDistance && dist >= minDistance && dist <= maxDistance) {
+            const t = 1 - dist / connectionDistance;
+            const alpha = (0.008 + 0.05 * t).toFixed(3);
             // Use configurable lineColor; supports rgba(...) with alpha placeholder
             // If a plain rgb(...) is provided, it will still render (browser ignores alpha part).
             ctx.strokeStyle = lineColor.includes("rgba")
@@ -137,7 +166,7 @@ const DotsBackground = ({
       if (ro && ro.disconnect) ro.disconnect();
       window.removeEventListener("resize", resize);
     };
-  }, [dotColor, lineColor, maxDistance, density]);
+  }, [dotColor, lineColor, minDistance, maxDistance, connectionDistance, density]);
 
   return (
     <div className={`dots-bg ${className}`} aria-hidden="true">

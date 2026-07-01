@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { FiMenu } from "react-icons/fi";
 import { Link, NavLink } from "react-router-dom";
 import Container from "./Container";
 import navigation from "../../data/navigation";
 
 import "../../styles/index.css";
 import "../../styles/header.css";
-import { GoStack } from "react-icons/go";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -51,7 +51,7 @@ const Header = () => {
         <div className="header-actions">
           <Link to="/contact" onClick={closeMenu}>
             <button className="header-btn" type="button">
-              Get Started
+              Let's Talk
             </button>
           </Link>
 
@@ -61,7 +61,7 @@ const Header = () => {
             type="button"
             aria-label="Toggle navigation"
           >
-            <GoStack />
+            <FiMenu />
           </button>
         </div>
       </Container>

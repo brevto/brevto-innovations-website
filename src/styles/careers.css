@@ -75,11 +75,11 @@
 }
 
 .careers-title-first-line {
-  font-size: clamp(3rem, 5vw, 5rem);
+  font-size: clamp(2rem, 4vw, 5rem);
 }
 
 .careers-title-second-line {
-  font-size: clamp(5rem, 7.5vw, 7rem);
+  font-size: clamp(5rem, 7vw, 7rem);
 }
 
 .careers-title-third-line {
@@ -89,49 +89,51 @@
 .careers-title {
   margin: 0;
 
-  color: white !important;
+  color: var(--text-primary);
 
   font-weight: 800;
   line-height: 1.05;
-
-  background: none !important;
-  -webkit-background-clip: initial !important;
-  -webkit-text-fill-color: white !important;
 }
 
-.careers-title span {
-  background: none !important;
+.careers-title .hero-filled-text {
+  color: transparent;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 1),
+    rgba(216, 216, 216, 0.95)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .careers-title-first-line,
 .careers-title-second-line,
 .careers-title-third-line {
-  color: white !important;
-
-  -webkit-text-fill-color: white !important;
-
-  background: none !important;
-
-  background-image: none !important;
+  color: var(--text-primary);
 }
 
-.outline-text {
+.careers-hero .careers-hero-outline-word {
+  /* Scoped careers-only outline: force transparent interior and a white stroke.
+    This avoids relying on text-shadow (which can visually fill glyphs) and
+    prevents any inherited background-clip or gradients from showing. */
   color: transparent !important;
-
   -webkit-text-fill-color: transparent !important;
 
+  /* Use a stroked outline for a true empty interior. */
   -webkit-text-stroke: 2px #ffffff !important;
+  text-stroke: 2px #ffffff !important;
 
+  /* Ensure no gradient background-clip leaks through */
   background: transparent !important;
-
   background-image: none !important;
-}
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
 
-.outline-text {
-  color: transparent;
-
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 2px #fff;
+  display: inline-block;
+  isolation: isolate;
+  font: inherit;
 }
 
 .careers-hero-content .careers-description {
@@ -200,7 +202,7 @@
 ================================================== */
 
 .roles-section {
-  padding: 80px 0;
+  padding: 80px 0 180px;
 }
 
 .jobs-grid {

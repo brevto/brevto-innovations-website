@@ -8,8 +8,9 @@
 
   background: var(--accent-gradient);
 
-  border:
-    1px solid var(--border);
+  border: 0.5px solid var(--border);
+    
+  margin-bottom: 120px;
 }
 
 .final-cta-card p {

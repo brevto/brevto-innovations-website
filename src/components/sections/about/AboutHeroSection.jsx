@@ -15,11 +15,11 @@ const AboutHeroSection = () => {
         <div className="about-hero-content">
 
           <h1 className="about-hero-title">
-            Building
+            <span className="hero-filled-text">Building</span>
             <span className="outline-word">
               Innovation
             </span>
-            Through Technology
+            <span className="hero-filled-text">Through Technology</span>
           </h1>
 
           <p className="about-hero-description">

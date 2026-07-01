@@ -31,15 +31,16 @@ const ProductsServices = () => {
           <div className="products-hero-content">
 
             <h1 className="products-title">
-              Digital <span className="outline-text">PRODUCTS</span>
+              <span className="hero-filled-text">Digital</span>{" "}
+              <span className="outline-text">PRODUCTS</span>
 
               <br />
 
-              <span className="product-title-and">&</span>
+              <span className="product-title-and hero-filled-text">&</span>
 
               <br />
-                STARTUP <span className="outline-text">SOLUTIONS
-              </span>
+              <span className="hero-filled-text">STARTUP</span>{" "}
+              <span className="outline-text">SOLUTIONS</span>
             </h1>
 
             <p className="products-description">

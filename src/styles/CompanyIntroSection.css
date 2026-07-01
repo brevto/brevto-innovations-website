@@ -35,15 +35,11 @@
   background:
     linear-gradient(
       135deg,
-      rgba(11, 18, 32, 0.98),
+      rgba(10, 17, 31, 0.98),
       rgba(3, 7, 18, 0.98)
     );
 
   border: 1px solid var(--border);
-
-  box-shadow:
-    var(--shadow-lg),
-    0 0 60px rgba(34, 231, 255, 0.08);
 
   isolation: isolate;
 }

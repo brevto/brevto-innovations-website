@@ -69,9 +69,9 @@ const Legal = () => {
             center={true}
             title={
               <>
-                <span className="legal-hero-title-line"><span className="outline-text">P</span>rivacy</span>
-                <span className="legal-hero-title-line legal-hero-title-offset"><span className="outline-text">T</span>erms</span>
-                <span className="legal-hero-title-line legal-hero-title-offset-large"><span className="outline-text">P</span>olicies</span>
+                <span className="legal-hero-title-line"><span className="outline-text">P</span><span className="hero-filled-text">rivacy</span></span>
+                <span className="legal-hero-title-line legal-hero-title-offset"><span className="outline-text">T</span><span className="hero-filled-text">erms</span></span>
+                <span className="legal-hero-title-line legal-hero-title-offset-large"><span className="outline-text">P</span><span className="hero-filled-text">olicies</span></span>
               </>
             }
           />

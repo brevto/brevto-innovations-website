@@ -48,9 +48,22 @@
   font-size: clamp(3rem, 5.2vw, 5.4rem);
   line-height: 0.95;
   letter-spacing: -0.04em;
-  color: #ffffff;
+  color: var(--text-primary);
   max-width: 860px;
   text-align: center;
+}
+
+.contact-hero .section-heading h2 .hero-filled-text {
+  color: transparent;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 1),
+    rgba(216, 216, 216, 0.95)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .contact-hero .section-heading h2 br {
@@ -412,7 +425,7 @@
 .contact-cta-section {
   position: relative;
   z-index: 1;
-  padding-bottom: 90px;
+  padding-bottom: 180px;
 }
 
 .contact-cta-content {

@@ -57,6 +57,7 @@
   font-weight: 800;
   background: linear-gradient(90deg, #38bdf8, #22d3ee);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -145,19 +146,18 @@
 .menu-toggle {
   display: none;
 
-  width: 46px;
-  height: 46px;
-
-  background: transparent;
-
-  align-items: center;
-  justify-content: center;
-
+  width: auto;
+  height: auto;
+  min-width: 0;
+  min-height: 0;
+  position: relative;
+  top: 0;
   cursor: pointer;
 
   color: #f7f7f7;
+  background: transparent;
 
-  transition: all 0.3s ease;
+  transition: color 0.3s ease;
   border: none;
   outline: none;
   appearance: none;

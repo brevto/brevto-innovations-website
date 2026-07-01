@@ -19,10 +19,6 @@
     );
 
   border: 1px solid var(--border);
-
-  box-shadow:
-    var(--shadow-lg),
-    0 0 60px rgba(34,231,255,0.08);
 }
 
 /* ==========================================
@@ -174,8 +170,8 @@
 .services-visual-image {
   position: relative;
   right: -5%;
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
 
   object-fit: contain;
 

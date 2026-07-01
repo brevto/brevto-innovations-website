@@ -63,19 +63,22 @@ return ( <div className="careers-page">
 
         <h1 className="careers-title">
           <span className="careers-title-first-line">
-            Come <span className="outline-text">build</span>
+            <span className="hero-filled-text">Come</span>{" "}
+            <span className="careers-hero-outline-word">build</span>
           </span>
 
           <br />
 
           <span className="careers-title-second-line">
-            the <span className="outline-text">things</span>
+            <span className="hero-filled-text">the</span>{" "}
+            <span className="careers-hero-outline-word">things</span>
           </span>
 
           <br />
 
           <span className="careers-title-third-line">
-            we'll be <span className="outline-text">proud of</span>
+            <span className="hero-filled-text">we'll be</span>{" "}
+            <span className="careers-hero-outline-word">proud of</span>
           </span>
         </h1>
 

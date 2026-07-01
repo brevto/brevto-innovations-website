@@ -30,11 +30,18 @@ const HeroSection = () => {
           </Badge> */}
 
           <h1>
-            Building Digital Products <GradientText>{" "}That Move Ideas Forward{" "}</GradientText>
+            {/* <span className="outline-text">B</span> */}
+            <span className="hero-filled-text">Building</span>{" "}
+            {/* <span className="outline-text">D</span> */}
+            <span className="hero-filled-text">Digital</span>{" "}
+            {/* <span className="outline-text">P</span> */}
+            <span className="hero-filled-text">Products</span>{" "}
+            <br />
+            <span className="signature-text">That Move Ideas Forward</span>
           </h1>
 
           <p>
-            Brevto Innovations Pvt Ltd is a technology company focused on building modern digital products, scalable web experiences, and startup-ready technology solutions. We combine product thinking, design, and engineering to transform ideas into meaningful digital experiences.
+            Brevto Innovations Pvt Ltd builds modern digital products and scalable web experiences. We combine product thinking, design, and engineering to turn ideas into impact.
           </p>
 
 

@@ -34,8 +34,10 @@ const Blogs = () => {
             </span> */}
 
             <h1 className="blogs-title">
-              Ideas worth <span className="outline-text">building.</span> <br />
-              Stories worth <span className="outline-text">sharing.</span>
+              <span className="hero-filled-text">Ideas worth</span>{" "}
+              <span className="outline-text">building.</span> <br />
+              <span className="hero-filled-text">Stories worth</span>{" "}
+              <span className="outline-text">sharing.</span>
             </h1>
 
             <p className="blogs-description">
