@@ -104,8 +104,7 @@ const Footer = () => {
 
             <h3>Contact</h3>
 
-            <p>business@brevto.com</p>
-            <p>support@brevto.com</p>
+            <p>brevto.official@gmail.com</p>
             <p>India</p>
 
           </div>
