@@ -15,6 +15,10 @@ import ContactCTASection from "../components/sections/ContactCTASection";
 
 import "../styles/contact.css";
 
+import { collection, doc, setDoc, serverTimestamp } from "firebase/firestore";
+import { db, isFirebaseConfigured, getFirebaseSetupErrorMessage } from "../lib/firebaseClient";
+import { sendAdminEmail } from "../lib/emailjsClient";
+
 const Contact = () => {
   const isLoading = usePageSkeleton();
   const [formData, setFormData] = useState({
@@ -22,13 +26,18 @@ const Contact = () => {
     email: "",
     subject: "",
     message: "",
+    agreeToPolicies: false,
   });
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
   const modalRef = useRef(null);
 
+
   const validateField = (name, value) => {
-    const trimmedValue = value.trim();
+    const stringValue = typeof value === "string" ? value : "";
+    const trimmedValue = stringValue.trim();
 
     switch (name) {
       case "name":
@@ -47,6 +56,8 @@ const Contact = () => {
         return trimmedValue.length >= 20
           ? ""
           : "Please share at least 20 characters about your project.";
+      case "agreeToPolicies":
+        return value ? "" : "You must agree to our Terms of Use and Privacy/Cookie policies.";
       default:
         return "";
     }
@@ -83,10 +94,35 @@ const Contact = () => {
     }
   };
 
-  const handleSubmit = (event) => {
+  const withTimeout = (promise, timeoutMs = 12000) =>
+    Promise.race([
+      promise,
+      new Promise((_, reject) => {
+        setTimeout(() => {
+          reject(new Error("Submission timed out. Please check your connection and Firestore rules."));
+        }, timeoutMs);
+      }),
+    ]);
+
+  const createSubmissionDocument = async (payload) => {
+    const submissionRef = doc(collection(db, "messages"));
+    await withTimeout(setDoc(submissionRef, payload));
+    return submissionRef;
+  };
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
+    if (isSubmitting) return;
+
     const nextErrors = validateForm(formData);
+
+    // policy agreement validation
+    if (!formData.agreeToPolicies) {
+      nextErrors.agreeToPolicies =
+        "You must agree to our Terms of Use and Privacy/Cookie policies.";
+    }
+
     setErrors(nextErrors);
 
     if (Object.keys(nextErrors).length > 0) {
@@ -94,18 +130,71 @@ const Contact = () => {
       return;
     }
 
-    setSubmitted(true);
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
+    setIsSubmitting(true);
+    setSubmitError("");
+
+    try {
+      if (!isFirebaseConfigured || !db) {
+        throw new Error(getFirebaseSetupErrorMessage());
+      }
+
+      const payload = {
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        subject: formData.subject.trim(),
+        message: formData.message.trim(),
+        agreeToPolicies: formData.agreeToPolicies,
+        createdAt: serverTimestamp(),
+      };
+
+      const docRef = await createSubmissionDocument(payload);
+
+      void sendAdminEmail({
+        from_name: formData.name.trim(),
+        from_email: formData.email.trim(),
+        subject: formData.subject.trim(),
+        message: formData.message.trim(),
+        submission_id: docRef.id,
+      }).catch((emailError) => {
+        console.error("Contact email notification failed:", emailError);
+      });
+
+      setSubmitted(true);
+      setErrors({});
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+        agreeToPolicies: false,
+      });
+    } catch (err) {
+      console.error("Contact submission failed:", err);
+      setSubmitted(false);
+
+      const errorMessage =
+        err?.code === "permission-denied" ||
+        err?.message?.includes("permission") ||
+        err?.message?.includes("Missing or insufficient permissions")
+          ? "Your message could not be saved because Firestore is blocking writes. Please update the Firestore rules to allow creates in the messages collection."
+          : err?.code === "failed-precondition" ||
+            err?.message?.includes("database") ||
+            err?.message?.includes("not enabled") ||
+            err?.message?.includes("enable Firestore")
+            ? "Firestore is not ready for writes yet. Please enable the Firestore database in Firebase Console and publish the rules."
+            : err?.message?.includes("timed out")
+              ? err.message
+              : err?.message || "Failed to send your message. Please try again in a few moments.";
+
+      setSubmitError(errorMessage);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
-  const hasMinimumInput = Object.entries(formData).every(([name, value]) => {
-    return validateField(name, value) === "";
-  });
+  // Keep the send button enabled and rely on validation messaging on submit.
+  // Disable only during in-flight submission to avoid double posts.
+  const hasMinimumInput = true;
 
   const closeModal = () => {
     setSubmitted(false);
@@ -239,13 +328,39 @@ const Contact = () => {
                 {errors.message && <p className="contact-form-error">{errors.message}</p>}
               </div>
 
+              <div className="contact-form-field">
+                <label className="contact-form-checkbox">
+                  <input
+                    type="checkbox"
+                    name="agreeToPolicies"
+                    checked={formData.agreeToPolicies}
+                    onChange={(e) =>
+                      setFormData((prev) => ({
+                        ...prev,
+                        agreeToPolicies: e.target.checked,
+                      }))
+                    }
+                    required
+                  />
+                  <span>
+                    I agree to the <a href="/terms-of-use">Terms of Use</a>, <a href="/privacy-policy">Privacy Policy</a>, and <a href="/cookie-policy">Cookie Policy</a> of Brevto Innovations Private Limited.
+                  </span>
+                </label>
+
+                {errors.agreeToPolicies && (
+                  <p className="contact-form-error">{errors.agreeToPolicies}</p>
+                )}
+              </div>
+
+              {submitError && <p className="contact-form-error">{submitError}</p>}
+
               <Button
                 variant="primary"
                 type="submit"
                 fullWidth={false}
-                disabled={!hasMinimumInput}
+                disabled={!hasMinimumInput || isSubmitting}
               >
-                Send Message
+                {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
             </form>
           </Card>
@@ -265,8 +380,8 @@ const Contact = () => {
             </button>
 
             <div className="contact-success-icon">✓</div>
-            <h3>Message sent</h3>
-            <p>Thanks for reaching out. We&apos;ll get back to you shortly.</p>
+            <h3>Message Sent</h3>
+            <p>Your message has been received and is now in our hands. We value your time and will reach out with care and priority.</p>
           </div>
         </div>
       )}

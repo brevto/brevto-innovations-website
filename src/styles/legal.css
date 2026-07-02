@@ -132,21 +132,18 @@
   transition: transform 0.25s ease;
 }
 
-.legal-accordion-arrow.open {
-  transform: rotate(90deg);
-}
-
 .legal-accordion-body {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: max-height 0.35s ease, opacity 0.35s ease;
-  padding: 0 28px;
+  max-height: none;
+  opacity: 1;
+  overflow: visible;
+  transition: none;
+  padding: 18px 28px 24px;
 }
 
 .legal-accordion-body.open {
-  max-height: 500px;
+  max-height: none;
   opacity: 1;
+  overflow: visible;
   padding: 18px 28px 24px;
 }
 
@@ -155,3 +152,116 @@
   color: rgba(255,255,255,0.75);
   line-height: 1.9;
 }
+
+/* Terms of Use (page) */
+.terms-of-use-page {
+  background:
+    radial-gradient(circle at top left, rgba(0, 0, 0, 0.027), transparent 70%),
+    linear-gradient(135deg, #010103, #00050c);
+  position: relative;
+  overflow: hidden;
+}
+
+.terms-of-use-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.75;
+}
+
+.terms-of-use-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 0 95px;
+  position: relative;
+  z-index: 1;
+}
+
+.terms-of-use-hero::before {
+  display: none;
+}
+
+.terms-of-use-hero .section-heading {
+  position: relative;
+  z-index: 2;
+  max-width: 980px;
+  text-align: center;
+}
+
+.terms-of-use-content {
+  padding: 90px 0 130px;
+  background: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.terms-of-use-markdown {
+  color: rgba(255, 255, 255, 0.86);
+  line-height: 1.9;
+  font-size: 1rem;
+}
+
+.terms-of-use-markdown p,
+.terms-of-use-markdown li,
+.terms-of-use-markdown blockquote {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.terms-of-use-markdown h2,
+.terms-of-use-markdown h3 {
+  color: #ffffff;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.terms-of-use-markdown h2 {
+  font-size: 1.5rem;
+}
+
+.terms-of-use-markdown h3 {
+  font-size: 1.25rem;
+}
+
+.terms-of-use-markdown a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: underline;
+}
+
+.terms-of-use-markdown ul,
+.terms-of-use-markdown ol {
+  padding-left: 1.25rem;
+  margin: 0.75rem 0;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .terms-of-use-hero {
+    padding: 40px 0 60px;
+  }
+
+  .terms-of-use-content {
+    padding: 60px 0 90px;
+  }
+
+  .terms-of-use-markdown {
+    font-size: 0.98rem;
+  }
+
+  .terms-of-use-markdown h2 {
+    font-size: 1.28rem;
+  }
+
+  .terms-of-use-markdown h3 {
+    font-size: 1.1rem;
+  }
+}
+
+

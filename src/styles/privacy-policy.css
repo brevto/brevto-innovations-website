@@ -1,0 +1,68 @@
+.privacy-policy-page {
+  background: radial-gradient(circle at top left, rgba(0, 0, 0, 0.027), transparent 70%),
+    linear-gradient(135deg, #010103, #00050c);
+  position: relative;
+  overflow: hidden;
+}
+
+.privacy-policy-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.75;
+}
+
+.privacy-policy-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0 70px;
+  position: relative;
+  z-index: 1;
+}
+
+.privacy-policy-content {
+  padding: 40px 0 120px;
+  background: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.privacy-policy-markdown {
+  color: rgba(255, 255, 255, 0.86);
+  line-height: 1.9;
+  font-size: 1rem;
+}
+
+/* Render markdown safely as preformatted text (since we inject raw md) */
+.privacy-policy-markdown {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.privacy-policy-markdown strong {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* Headings inside raw markdown */
+.privacy-policy-markdown {
+  /* no-op: styling handled by global typography */
+}
+
+@media (max-width: 768px) {
+  .privacy-policy-content {
+    padding: 30px 0 90px;
+  }
+
+  .privacy-policy-markdown {
+    font-size: 0.98rem;
+  }
+}
+

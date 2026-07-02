@@ -11,7 +11,7 @@ const usePageSkeleton = (loading) => {
 
     const timer = setTimeout(() => {
       setShowSkeleton(true);
-    }, 2000);
+    }, 600);
 
     return () => clearTimeout(timer);
   }, [loading]);
