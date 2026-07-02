@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 import Container from "../layout/Container";
 import Button from "../ui/Button";
@@ -6,6 +7,8 @@ import Button from "../ui/Button";
 import "../../styles/CareersSection.css";
 
 const CareersSection = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="careers-section">
 
@@ -37,7 +40,7 @@ const CareersSection = () => {
               </p>
 
               <div className="careers-button">
-                <Button variant="primary">
+                <Button variant="primary" onClick={() => navigate("/careers")}>
                   View Opportunities
                 </Button>
               </div>

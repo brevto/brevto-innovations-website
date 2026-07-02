@@ -5,21 +5,11 @@ const JobModal = ({ open, onClose, job }) => {
   if (!open || !job) return null;
 
   const handleApply = () => {
-    const subject = encodeURIComponent(
-      `Application for ${job.role}`
+    window.open(
+      "https://forms.gle/NZwZS7arhpj2Tz449",
+      "_blank",
+      "noopener,noreferrer"
     );
-
-    const body = encodeURIComponent(
-      `Hello,
-
-I'd like to apply for the ${job.role} position.
-
-Please find my application attached.
-
-Regards,`
-    );
-
-    window.location.href = `mailto:careers@brevto.com?subject=${subject}&body=${body}`;
   };
 
   return (

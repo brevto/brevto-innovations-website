@@ -13,7 +13,7 @@
   pointer-events: none;
 
   /* must be visible (target ~35-45% overall) */
-  opacity: 0.4;
+  opacity: 0.65;
 
 
   /* Ensure dots always sit behind hero content */

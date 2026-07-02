@@ -6,6 +6,8 @@ const Input = ({
   value,
   onChange,
   name,
+  id,
+  required = false,
 }) => {
   return (
     <input
@@ -15,6 +17,8 @@ const Input = ({
       value={value}
       onChange={onChange}
       name={name}
+      id={id}
+      required={required}
     />
   );
 };

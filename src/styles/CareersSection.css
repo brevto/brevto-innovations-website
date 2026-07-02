@@ -25,10 +25,6 @@
     );
 
   border: 1px solid var(--border);
-
-  box-shadow:
-    var(--shadow-lg),
-    0 0 60px rgba(34,231,255,.08);
 }
 
 /* ==========================================
@@ -113,7 +109,7 @@
 
 /* DESCRIPTION */
 
-.careers-description {
+.careers-left .careers-description {
   color: var(--text-secondary);
 
   font-size: 1.05rem;
@@ -122,13 +118,13 @@
 
   max-width: 650px;
 
-  margin-bottom: 35px;
+  margin-top: 25px;
 }
 
 /* BUTTON */
 
 .careers-button {
-  margin-top: auto;
+  margin-top: 60px;
 }
 
 /* ==========================================

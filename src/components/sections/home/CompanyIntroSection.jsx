@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Container from "../../layout/Container";
 import "../../../styles/CompanyIntroSection.css";
 
@@ -26,9 +27,9 @@ const features = [
 ];
 
 const CompanyIntroSection = () => {
+  const navigate = useNavigate();
 
-  
-useEffect(() => {
+  useEffect(() => {
   document.documentElement.style.setProperty(
     "--dot-fade-1",
     `${(1.4 + Math.random() * 0.5).toFixed(2)}px`
@@ -91,7 +92,7 @@ useEffect(() => {
 
                 <p>{item.desc}</p>
 
-                <button className="arrow-btn">
+                <button className="arrow-btn" onClick={() => navigate("/products-services")}>
                   →
                 </button>
 

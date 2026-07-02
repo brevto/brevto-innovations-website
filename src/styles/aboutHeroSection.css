@@ -1,5 +1,7 @@
 .about-hero-section {
   padding: 120px 0 80px;
+  position: relative;
+  z-index: 1;
 }
 
 .about-hero-content {
@@ -20,6 +22,19 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 0 16px;
+}
+
+.about-hero-title .hero-filled-text {
+  color: transparent;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 1),
+    rgba(216, 216, 216, 0.95)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .outline-word {
