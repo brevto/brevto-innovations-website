@@ -105,6 +105,7 @@ const Footer = () => {
             <h3>Contact</h3>
 
             <p>brevto.official@gmail.com</p>
+            <p>brevto.support@gmail.com</p>
             <p>India</p>
 
           </div>

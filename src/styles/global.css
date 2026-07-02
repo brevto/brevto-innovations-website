@@ -43,7 +43,57 @@ button {
 
 .main-content {
   min-height: 100vh;
-  padding-top: 85px;
+  padding-top: 110px;
+}
+
+.breadcrumbs {
+  width: 100%;
+  padding: 0 0 8px;
+}
+
+.breadcrumbs-container {
+  width: min(90%, 1320px);
+  margin: 0 auto;
+  padding: 0 0 4px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.breadcrumbs-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding-left: 45px;
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #cbd5e1;
+  font-size: 0.9rem;
+}
+
+.breadcrumb-link {
+  color: #94a3b8;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb-link:hover {
+  color: #22e7ff;
+}
+
+.breadcrumb-current {
+  color: #f8fafc;
+  font-weight: 600;
+}
+
+.breadcrumb-separator {
+  color: #64748b;
 }
 
 .back-to-top-button {
@@ -81,7 +131,15 @@ section {
   padding: 60px 0;
 }
 
+@media (max-width: 540px) {
+  .main-content {
+    padding-top: 100px;
+  }
 
+  .breadcrumb-item {
+    font-size: 0.82rem;
+  }
+}
 
 /* =========================
    UI COMPONENTS

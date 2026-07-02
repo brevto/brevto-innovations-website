@@ -1,11 +1,51 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
+import Container from "./Container";
+
+const routeLabels = {
+  "/about": "About",
+  "/products-services": "Products & Services",
+  "/careers": "Careers",
+  "/blogs": "Blogs",
+  "/contact": "Contact",
+  "/legal": "Legal",
+  "/privacy-policy": "Privacy Policy",
+  "/terms-of-use": "Terms of Use",
+  "/cookie-policy": "Cookie Policy",
+  "/data-security-policy": "Data Security Policy",
+  "/intellectual-property-policy": "Intellectual Property Policy",
+};
 
 const Layout = ({ children }) => {
   const [showTopButton, setShowTopButton] = useState(false);
   const location = useLocation();
+
+  const breadcrumbs = React.useMemo(() => {
+    const segments = location.pathname.split("/").filter(Boolean);
+
+    if (segments.length === 0) {
+      return [];
+    }
+
+    const items = [{ label: "Home", path: "/" }];
+    let accumulatedPath = "";
+
+    segments.forEach((segment) => {
+      accumulatedPath += `/${segment}`;
+      items.push({
+        label:
+          routeLabels[accumulatedPath] ||
+          segment
+            .replace(/-/g, " ")
+            .replace(/\b\w/g, (char) => char.toUpperCase()),
+        path: accumulatedPath,
+      });
+    });
+
+    return items;
+  }, [location.pathname]);
 
   useEffect(() => {
     const getHeroThreshold = () => {
@@ -52,10 +92,38 @@ const Layout = ({ children }) => {
 
   return (
     <div className="app-layout">
-
       <Header />
 
       <main className="main-content">
+        {breadcrumbs.length > 0 && (
+          <nav className="breadcrumbs" aria-label="Breadcrumb">
+            <div className="breadcrumbs-container">
+              <ol className="breadcrumbs-list">
+                {breadcrumbs.map((crumb, index) => {
+                  const isLast = index === breadcrumbs.length - 1;
+
+                  return (
+                    <li key={crumb.path} className="breadcrumb-item">
+                      {isLast ? (
+                        <span className="breadcrumb-current">{crumb.label}</span>
+                      ) : (
+                        <>
+                          <Link to={crumb.path} className="breadcrumb-link">
+                            {crumb.label}
+                          </Link>
+                          <span className="breadcrumb-separator" aria-hidden="true">
+                            /
+                          </span>
+                        </>
+                      )}
+                    </li>
+                  );
+                })}
+              </ol>
+            </div>
+          </nav>
+        )}
+
         {children}
       </main>
 
